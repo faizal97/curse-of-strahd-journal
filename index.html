@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jurnal Tak Terlihat</title>
+<meta name="description" content="Kampanye Curse of Strahd kita: rangkuman sesi, penduduk Barovia, dan misteri yang belum terjawab.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mist: #dde0d9;
+    --vellum: #eef0ea;
+    --ink: #1e221e;
+    --ink-soft: #4a5049;
+    --wine: #6e1f2b;
+    --candle: #9a6a24;
+    --moss: #4d5c46;
+    --rule: #b9beb4;
+    --display: "IM Fell English", Georgia, serif;
+    --body: "Alegreya Sans", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--mist);
+    color: var(--ink);
+    font: 400 1.0625rem/1.55 var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--wine); }
+  :focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+  .wrap { width: min(68rem, 100% - 2rem); margin-inline: auto; }
+
+  /* Top bar */
+  .bar {
+    position: sticky; top: 0; z-index: 5;
+    background: color-mix(in srgb, var(--mist) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .6rem; }
+  .bar strong { font: 400 1.25rem/1 var(--display); }
+  .bar nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+  .bar nav a { color: var(--ink-soft); text-decoration: none; font-weight: 500; }
+  .bar nav a:hover { color: var(--wine); }
+
+  /* Hero: the cliffhanger */
+  .hero {
+    position: relative; overflow: hidden;
+    min-height: min(74vh, 40rem);
+    display: grid; align-items: end;
+    padding-block: 5rem 3.5rem;
+    isolation: isolate;
+  }
+  .hero::before, .hero::after {
+    content: ""; position: absolute; inset: -20%; z-index: -1;
+    background:
+      radial-gradient(40% 30% at 20% 70%, #fff9 0%, transparent 70%),
+      radial-gradient(35% 25% at 70% 40%, #fff7 0%, transparent 70%),
+      radial-gradient(50% 35% at 50% 90%, #c9cec4 0%, transparent 70%);
+    animation: drift 38s ease-in-out infinite alternate;
+  }
+  .hero::after { animation-duration: 55s; animation-direction: alternate-reverse; opacity: .7; }
+  @keyframes drift { from { transform: translateX(-6%); } to { transform: translateX(6%); } }
+  @media (prefers-reduced-motion: reduce) { .hero::before, .hero::after { animation: none; } html { scroll-behavior: auto; } }
+
+  .hero .context { max-width: 38rem; color: var(--ink-soft); font-size: 1.125rem; margin: 0 0 1.25rem; }
+  /* One warm point in the fog: candlelight behind the door. */
+  .hero .wrap { position: relative; }
+  .hero .wrap::before {
+    content: ""; position: absolute; z-index: -1;
+    left: -4rem; bottom: 2rem; width: min(38rem, 90%); height: 16rem;
+    background: radial-gradient(closest-side, #e8c27a66, #e8c27a1f 60%, transparent);
+    pointer-events: none;
+  }
+  .hero h1 {
+    margin: 0;
+    font: 400 clamp(3.5rem, 13vw, 10rem)/.88 var(--display);
+    letter-spacing: -.02em;
+    color: var(--ink);
+  }
+  .hero .who { margin: 1.25rem 0 0; font: italic 400 1.25rem/1.4 var(--display); color: var(--wine); }
+  .next {
+    margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: .5rem 2rem; align-items: baseline;
+    border-top: 1px solid var(--rule); padding-top: 1rem; color: var(--ink-soft);
+  }
+  .next b { color: var(--ink); font-weight: 700; }
+
+  section { padding-block: 4rem; }
+  h2 { font: 400 clamp(2rem, 5vw, 3rem)/1.05 var(--display); margin: 0 0 .5rem; }
+  .lede { color: var(--ink-soft); margin: 0 0 2rem; max-width: 40rem; }
+
+  /* Quest + threads */
+  .quest {
+    background: var(--vellum); border-left: 4px solid var(--wine);
+    padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; max-width: 44rem;
+  }
+  .quest p { margin: 0; }
+  .quest .name { font: 400 1.75rem/1.2 var(--display); }
+  .quest .from { color: var(--ink-soft); margin-top: .35rem; }
+  .threads { list-style: none; padding: 0; margin: 0; columns: 2 22rem; column-gap: 3rem; }
+  .threads li { break-inside: avoid; padding: .7rem 0 .7rem 1.6rem; border-bottom: 1px solid var(--rule); position: relative; }
+  .threads li::before { content: "?"; position: absolute; left: 0; top: .55rem; font: 400 1.3rem/1 var(--display); color: var(--candle); }
+
+  /* Journal */
+  .journal { border-left: 1px solid var(--rule); margin-left: .6rem; }
+  .entry { position: relative; padding: 0 0 1.75rem 2rem; }
+  .entry::before {
+    content: ""; position: absolute; left: -.42rem; top: .55rem;
+    width: .8rem; height: .8rem; border-radius: 50%;
+    background: var(--mist); border: 2px solid var(--candle);
+  }
+  .entry.latest::before { background: var(--candle); }
+  .entry summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; gap: .25rem 1rem; align-items: baseline; }
+  .entry summary::-webkit-details-marker { display: none; }
+  .entry .num { color: var(--ink-soft); font-weight: 500; min-width: 5.5rem; }
+  .entry .ttl { font: 400 1.6rem/1.2 var(--display); }
+  .entry summary:hover .ttl { color: var(--wine); }
+  .entry .date { color: var(--ink-soft); font-size: .95rem; }
+  .entry.quiet .ttl { color: var(--ink-soft); font-style: italic; }
+  .entry .text {
+    max-width: 40rem; margin-top: 1rem;
+    font: 400 1.18rem/1.7 var(--display);
+  }
+  .entry .text p { margin: 0 0 1rem; }
+  .entry .original { max-width: 40rem; }
+  .entry .original summary { display: inline; color: var(--wine); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+  .entry .original .text { color: var(--ink-soft); }
+
+  /* Party */
+  .party { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 0 2rem; }
+  .party div { padding: 1rem 0; border-top: 2px solid var(--moss); }
+  .party h3 { font: 400 1.5rem/1.2 var(--display); margin: 0 0 .3rem; }
+  .party p { margin: 0; color: var(--ink-soft); }
+
+  /* People of Barovia */
+  .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 2.5rem 2rem; }
+  .person figure { margin: 0; }
+  .person img {
+    width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top;
+    border-radius: 50% 50% 0 0 / 28% 28% 0 0;
+    background: var(--vellum);
+    display: block;
+  }
+  .person.dead img { filter: grayscale(1) contrast(.9) brightness(.92); }
+  .person h3 { font: 400 1.45rem/1.15 var(--display); margin: .9rem 0 .15rem; }
+  .person .role { color: var(--ink-soft); margin: 0 0 .5rem; font-weight: 500; }
+  .person .fate { color: var(--wine); margin: -.35rem 0 .5rem; font: italic 400 1.05rem/1.3 var(--display); }
+  .person p { margin: 0; }
+
+  footer { padding-block: 3rem 4rem; color: var(--ink-soft); border-top: 1px solid var(--rule); }
+  footer p { margin: 0; font: italic 400 1.2rem/1.4 var(--display); }
+
+  @media (max-width: 40rem) {
+    .bar .wrap { flex-wrap: wrap; row-gap: .3rem; }
+    .bar strong { white-space: nowrap; }
+    .bar nav { gap: .9rem; font-size: .95rem; }
+    .hero { padding-block: 3rem 2.5rem; }
+    .entry { padding-left: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+  <header class="bar">
+    <div class="wrap">
+      <strong>Jurnal Tak Terlihat</strong>
+      <nav aria-label="Sections">
+        <a href="#quest">Quest</a>
+        <a href="#journal">Journal</a>
+        <a href="#party">Party</a>
+        <a href="#people">People</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="leftoff">
+      <div class="wrap">
+        <p class="context" id="leftoff-context"></p>
+        <h1 id="leftoff"></h1>
+        <p class="who" id="leftoff-who"></p>
+        <div class="next" id="next"></div>
+      </div>
+    </section>
+
+    <section id="quest">
+      <div class="wrap">
+        <h2>Misi kita</h2>
+        <div class="quest">
+          <p class="name" id="quest-name"></p>
+          <p class="from" id="quest-from"></p>
+        </div>
+        <h2>Yang belum kita ketahui</h2>
+        <p class="lede">Pertanyaan yang masih menggantung di meja kita. Coret satu per satu saat jawabannya ketemu.</p>
+        <ul class="threads" id="threads"></ul>
+      </div>
+    </section>
+
+    <section id="journal">
+      <div class="wrap">
+        <h2>Jurnal</h2>
+        <p class="lede">Setiap sesi menurut penulis yang tak terlihat, dari yang terbaru. Ketuk sebuah sesi untuk membacanya.</p>
+        <div class="journal" id="sessions"></div>
+      </div>
+    </section>
+
+    <section id="party">
+      <div class="wrap">
+        <h2>Para pengembara</h2>
+        <p class="lede">Mereka yang melewati gerbang.</p>
+        <div class="party" id="party-list"></div>
+      </div>
+    </section>
+
+    <section id="people">
+      <div class="wrap">
+        <h2>Penduduk Barovia</h2>
+        <p class="lede">Semua yang sudah kita temui. Percayai seperlunya.</p>
+        <div class="people" id="npcs"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><p>Aku akan terus mengawasi.</p></div>
+  </footer>
+
+<script src="content.js"></script>
+<script>
+  const c = window.CAMPAIGN;
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, attrs = {}, kids = []) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) k === "text" ? (n.textContent = v) : n.setAttribute(k, v);
+    for (const kid of [].concat(kids)) n.append(kid);
+    return n;
+  };
+  const paragraphs = (s) => s.split(/\n\s*\n/).map((p) => el("p", { text: p.trim() }));
+
+  // Hero
+  $("leftoff-context").textContent = c.leftOff.text;
+  $("leftoff").textContent = c.leftOff.quote;
+  $("leftoff-who").textContent = `Posisi terakhir kita, akhir sesi ${c.leftOff.session}.`;
+
+  const next = new Date(c.nextSession);
+  const fmt = new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+  const tick = () => {
+    const ms = next - Date.now();
+    let left;
+    if (ms <= 0 && ms > -5 * 3600e3) left = "Sedang dimainkan";
+    else if (ms <= 0) left = "Jadwal berikutnya belum ditentukan";
+    else {
+      const h = Math.floor(ms / 3600e3), m = Math.floor((ms % 3600e3) / 60e3);
+      left = h >= 48 ? `${Math.round(h / 24)} hari lagi` : `${h} jam ${m} menit lagi`;
+    }
+    $("next").replaceChildren(
+      el("span", {}, ["Sesi berikutnya: ", el("b", { text: fmt.format(next) })]),
+      el("span", { text: left })
+    );
+  };
+  tick(); setInterval(tick, 30e3);
+
+  // Quest
+  $("quest-name").textContent = c.quest.name;
+  $("quest-from").textContent = c.quest.from;
+  $("threads").replaceChildren(...c.threads.map((t) => el("li", { text: t })));
+
+  // Journal, newest first, latest open
+  const ordered = [...c.sessions].sort((a, b) => b.n - a.n);
+  $("sessions").replaceChildren(...ordered.map((s, i) => {
+    const d = el("details", { class: "entry" + (i === 0 ? " latest" : "") + (s.quiet ? " quiet" : "") });
+    if (i === 0) d.open = true;
+    d.append(
+      el("summary", {}, [
+        el("span", { class: "num", text: `Sesi ${s.n}` }),
+        el("span", { class: "ttl", text: s.title }),
+        s.date ? el("span", { class: "date", text: s.date }) : ""
+      ]),
+      el("div", { class: "text", lang: s.lang }, paragraphs(s.text))
+    );
+    if (s.original) {
+      d.append(el("details", { class: "original" }, [
+        el("summary", { text: "Baca versi asli (English)" }),
+        el("div", { class: "text", lang: "en" }, paragraphs(s.original))
+      ]));
+    }
+    return d;
+  }));
+
+  // Party
+  $("party-list").replaceChildren(...c.party.map((p) =>
+    el("div", {}, [el("h3", { text: p.name }), el("p", { text: p.note })])));
+
+  // NPCs
+  $("npcs").replaceChildren(...c.npcs.map((n) =>
+    el("article", { class: "person" + (n.status === "dead" ? " dead" : "") }, [
+      el("figure", {}, [el("img", { src: n.img, alt: `Potret ${n.name}`, loading: "lazy" })]),
+      el("h3", { text: n.name }),
+      el("p", { class: "role", text: n.role }),
+      n.fate ? el("p", { class: "fate", text: n.fate }) : "",
+      el("p", { text: n.text })
+    ])));
+</script>
+</body>
+</html>
