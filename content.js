@@ -21,10 +21,11 @@ window.CAMPAIGN = {
       when: "Malam ini, di depan pintu",
       steps: [
         "Bromli: seseorang baru saja menepuk pundakmu. Berbalik dengan hati-hati dan lihat dulu siapa itu sebelum menyerang. Bisa jadi teman, bisa jadi bukan.",
-        "Jangan buka pintunya dulu. Bangunkan semua orang.",
-        "Cek ke atas: apakah Ireena dan Ismark yang asli masih di kamarnya?",
+        "Jangan buka pintunya dulu.",
+        "Membangunkan yang lain membuat semua kena disadvantage. Bangunkan hanya kalau benar-benar terjadi pertarungan.",
+        "Cek ke atas sendiri: apakah Ireena dan Ismark yang asli masih di kamarnya?",
         "Uji mereka. Ismark yang asli suka melucu untuk menutupi rasa takut. Ireena yang asli melindungi orang yang ia sayangi, bukan membahayakan mereka.",
-        "Duff bisa memakai Divine Sense untuk merasakan mayat hidup atau iblis di dalam ruangan. Pintu yang tertutup menghalanginya."
+        "Kalau Duff terpaksa dibangunkan, ia bisa memakai Divine Sense untuk merasakan mayat hidup atau iblis di dalam ruangan. Pintu yang tertutup menghalanginya."
       ]
     },
     {
@@ -78,8 +79,8 @@ window.CAMPAIGN = {
   ],
 
   party: [
-    { name: "Ca Gar", note: "Membobol kunci meja Kolyan. Anak di balik jendela hanya bicara padanya." },
-    { name: "Jayn", note: "Berlari sendirian ke gereja mencari air suci saat desa jatuh." },
+    { name: "Ca Gar", note: "Ikut menggeledah ruang kerja Kolyan. Anak di balik jendela hanya bicara padanya." },
+    { name: "Jayn", note: "Berlari sendirian ke gereja mencari air suci saat desa jatuh. Membobol kunci meja Kolyan." },
     { name: "Bromli", note: "Berjaga sendirian di giliran ketiga. Dialah yang mendengar permintaan di depan pintu." },
     { name: "Duff Tareezy", note: "Paladin Sumpah Para Leluhur dari Evergreen Dawn. Bergabung di malam panjang itu." }
   ],
