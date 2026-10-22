@@ -69,7 +69,7 @@
   <main id="main"></main>
 
   <footer>
-    <div class="wrap"><p><a href="index.html#party">Kembali ke jurnal</a></p></div>
+    <div class="wrap"><p><a href="index.html#party">Kembali ke jurnal</a></p><p class="fresh" id="fresh"></p></div>
   </footer>
 
 <script src="content.js"></script>
@@ -85,6 +85,7 @@
     return n;
   };
 
+  $("fresh").textContent = `Terakhir diperbarui setelah sesi ${c.lastUpdate.session}, ${c.lastUpdate.date}.`;
   const id = new URLSearchParams(location.search).get("id");
   const p = c.party.find((x) => x.id === id);
   const g = G[id];

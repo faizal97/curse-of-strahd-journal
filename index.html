@@ -110,7 +110,7 @@
 
 
   <footer>
-    <div class="wrap"><p>Aku akan terus mengawasi.</p></div>
+    <div class="wrap"><p>Aku akan terus mengawasi.</p><p class="fresh" id="fresh"></p></div>
   </footer>
 
 <script src="content.js"></script>
@@ -125,6 +125,8 @@
     return n;
   };
   const paragraphs = (s) => s.split(/\n\s*\n/).map((p) => el("p", { text: p.trim() }));
+
+  $("fresh").textContent = `Terakhir diperbarui setelah sesi ${c.lastUpdate.session}, ${c.lastUpdate.date}.`;
 
   // Hero
   $("leftoff-context").textContent = c.leftOff.text;

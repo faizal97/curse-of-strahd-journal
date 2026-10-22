@@ -2,6 +2,7 @@
 // Keyed by the party member's id in content.js. Rules follow the sheets: 5e 2014 plus Tasha's options.
 window.GUIDES = {
   duff: {
+    asOf: 5,
     stats: "AC 18 · HP 25 · Init -1 · Speed 30 · DC mantra 13",
     turn: [
       "Ronde pertama: Bless (action) kalau teman-teman sedang menyerang. Kalau tidak, serang lalu pakai Compelled Duel atau Shield of Faith (bonus action).",
@@ -36,6 +37,7 @@ window.GUIDES = {
   },
 
   bromli: {
+    asOf: 5,
     stats: "AC 12 · HP 26 · Init +0 · Speed 25 · Str +3",
     turn: [
       "Bonus action: Rage. Kerusakan +2, tahan separuh kerusakan senjata, keuntungan pada cek dan save Strength.",
@@ -71,6 +73,7 @@ window.GUIDES = {
   },
 
   "dan-garr": {
+    asOf: 5,
     stats: "AC 13 · HP 21 · Init +3 · Speed 40 · Ki 3",
     turn: [
       "Action: Attack dengan pukulan (+5, 1d4+3). Lalu bonus action untuk satu pukulan lagi, gratis.",
@@ -105,6 +108,7 @@ window.GUIDES = {
   },
 
   jayn: {
+    asOf: 5,
     stats: "AC 16 · HP 11 dari 24 · Init +5 · Speed 25 · Sneak Attack 2d6",
     turn: [
       "Cari advantage atau pastikan ada teman di sebelah musuh, lalu tusuk atau lempar belati (+7, 1d4+5) untuk Sneak Attack +2d6.",
@@ -138,6 +142,7 @@ window.GUIDES = {
   },
 
   "cha-garr": {
+    asOf: 5,
     stats: "AC 18 · HP 17 dari 24 · Init +0 · Speed 20 · DC mantra 14",
     turn: [
       "Ronde pertama: Spiritual Weapon (bonus action, tanpa concentration), lalu Sacred Flame (action).",

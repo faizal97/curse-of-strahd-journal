@@ -2,6 +2,7 @@
 // Each item: [name, quantity, optional note]
 window.INVENTORY = {
   updated: "22 Okt 2026, dari sheet Roll20",
+  asOf: 5,
 
   // Quest items and things the whole party should know about
   shared: [

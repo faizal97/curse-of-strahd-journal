@@ -199,3 +199,5 @@
   .loot-gold li { display: flex; justify-content: space-between; gap: 1rem; }
   .loot-gold li.total { font-weight: 700; border-top: 2px solid var(--ink); }
   @media (max-width: 48rem) { .loot { grid-template-columns: 1fr; } }
+
+  footer p.fresh { margin-top: .6rem; font: 400 .95rem/1.4 var(--body); font-style: normal; color: var(--ink-soft); }

@@ -4,6 +4,11 @@ window.CAMPAIGN = {
   table: "Meja kita di Roll20",
   nextSession: "2026-10-22T21:00:00+07:00",
 
+  // Which session each part was last checked against. Run `node check.mjs` after every update:
+  // anything older than the latest session in `sessions` is reported as outdated.
+  lastUpdate: { session: 5, date: "22 Okt 2026" },
+  reviewed: { leftOff: 5, nextSteps: 5, teamwork: 5, reminders: 5, threads: 5, quest: 5, party: 5, npcs: 5 },
+
   leftOff: {
     session: 5,
     text: "Giliran jaga ketiga. Bromli duduk sendirian di dekat pintu rumah Burgomaster sementara yang lain tidur. Ireena turun dari tangga dan bicara padanya. Lalu Ismark juga. Keduanya meminta hal yang sama. Bromli menyalakan perapian, lalu seseorang menepuk pundaknya.",
