@@ -99,7 +99,8 @@ window.GUIDES = {
     careful: [
       "Passive Perception cuma 9. Jangan jaga malam sendirian.",
       "AC 13 dan HP 21. Jangan jadi garis depan terlalu lama.",
-      "Ki cuma 3. Simpan satu untuk kabur atau Deflect Missiles."
+      "Ki cuma 3. Simpan satu untuk kabur atau Deflect Missiles.",
+      "Light crossbow-mu tidak punya bolt di inventory. Beli di toko Bildrath, atau pakai dart dulu."
     ]
   },
 
@@ -123,7 +124,7 @@ window.GUIDES = {
     outside: [
       "Sleight of Hand +7. Kamu yang membuka kunci dan memeriksa jebakan.",
       "Deception +3. Kamu bisa menggertak atau mengalihkan perhatian.",
-      "Pastikan thieves' tools memang ada di inventory Roll20-mu. Di sheet tidak tercatat."
+      "Kamu membawa thieves' tools dan disguise kit. Pakai Fast Hands untuk membuka kunci sebagai bonus action."
     ],
     tonight: [
       "HP-mu tinggal 11. Minta disembuhkan sebelum ada pertarungan: Healing Word dari Cha Garr atau Lay on Hands dari Duff.",

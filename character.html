@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQNTM DnD Journal</title>
+<meta name="description" content="Tips dan barang bawaan untuk satu karakter di kampanye Curse of Strahd kita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .bar strong a { color: inherit; text-decoration: none; }
+  .bar nav a[aria-current="page"] { color: var(--wine); text-decoration: underline; text-underline-offset: 4px; }
+
+  .char-hero { padding-block: 3rem 2rem; }
+  .char-hero .wrap { display: grid; grid-template-columns: minmax(12rem, 20rem) 1fr; gap: 2.5rem; align-items: end; }
+  .char-hero img {
+    width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%;
+    border-radius: 50% 50% 0 0 / 28% 28% 0 0; display: block; background: var(--vellum);
+  }
+  .char-hero h1 { font: 400 clamp(2.6rem, 8vw, 5rem)/.95 var(--display); margin: 0; }
+  .char-hero .cls { color: var(--moss); font-weight: 500; font-size: 1.15rem; margin: .8rem 0 0; }
+  .char-hero .role { margin: .8rem 0 0; max-width: 34rem; }
+  .stats { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+  .stats li { background: var(--vellum); border: 1px solid var(--rule); padding: .35rem .7rem; font-weight: 500; }
+
+  .jump { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; padding: 1rem 0 0; margin: 2rem 0 0; border-top: 1px solid var(--rule); }
+  .jump a { color: var(--ink-soft); font-weight: 500; text-decoration: none; }
+  .jump a:hover { color: var(--wine); }
+
+  .char-body section { padding-block: 2.25rem; border-top: 1px solid var(--rule); }
+  .char-body section:first-child { border-top: 0; }
+  .char-body h2 { margin-bottom: 1rem; }
+  .char-body .tonight h2 { color: var(--wine); }
+  .char-body ol, .char-body ul { margin: 0; padding-left: 1.3rem; max-width: 44rem; }
+  .char-body li { padding: .35rem 0; }
+  .abilities { display: grid; grid-template-columns: minmax(10rem, 16rem) 1fr; margin: 0; }
+  .abilities dt, .abilities dd { margin: 0; padding: .7rem 0; border-top: 1px solid var(--rule); }
+  .abilities dt { font: 400 1.2rem/1.3 var(--display); padding-right: 1.5rem; }
+  .abilities dd { max-width: 42rem; }
+
+  .inv-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 2rem; margin-bottom: 1rem; color: var(--ink-soft); }
+  .inv-top .gold { font: 400 2rem/1 var(--display); color: var(--candle); }
+  .inv { width: 100%; max-width: 46rem; border-collapse: collapse; }
+  .inv th { text-align: left; font-weight: 500; color: var(--ink-soft); padding: .4rem 0; border-bottom: 2px solid var(--ink); }
+  .inv td { padding: .55rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .inv td.qty, .inv th.qty { text-align: right; padding-right: 1.5rem; width: 4rem; font-variant-numeric: tabular-nums; }
+  .inv td.note { color: var(--ink-soft); font-size: .95rem; }
+
+  .missing { padding: 6rem 0; }
+
+  @media (max-width: 44rem) {
+    .char-hero .wrap { grid-template-columns: 1fr; }
+    .char-hero img { max-width: 16rem; }
+    .abilities { grid-template-columns: 1fr; }
+    .abilities dd { border-top: 0; padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+  <header class="bar">
+    <div class="wrap">
+      <strong><a href="index.html">SQNTM DnD Journal</a></strong>
+      <nav aria-label="Party" id="party-nav"></nav>
+    </div>
+  </header>
+
+  <main id="main"></main>
+
+  <footer>
+    <div class="wrap"><p><a href="index.html#party">Kembali ke jurnal</a></p></div>
+  </footer>
+
+<script src="content.js"></script>
+<script src="guides.js"></script>
+<script src="inventory.js"></script>
+<script>
+  const c = window.CAMPAIGN, G = window.GUIDES, INV = window.INVENTORY;
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, attrs = {}, kids = []) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) k === "text" ? (n.textContent = v) : n.setAttribute(k, v);
+    for (const kid of [].concat(kids)) n.append(kid);
+    return n;
+  };
+
+  const id = new URLSearchParams(location.search).get("id");
+  const p = c.party.find((x) => x.id === id);
+  const g = G[id];
+  const inv = INV.people[id];
+
+  $("party-nav").replaceChildren(...c.party.map((x) =>
+    el("a", { href: `character.html?id=${x.id}`, text: x.short, ...(x.id === id ? { "aria-current": "page" } : {}) })));
+
+  if (!p || !g) {
+    $("main").replaceChildren(el("div", { class: "wrap missing" }, [
+      el("h1", { text: "Karakter tidak ditemukan" }),
+      el("p", {}, ["Pilih salah satu nama di menu atas, atau ", el("a", { href: "index.html#party", text: "kembali ke daftar party" }), "."])
+    ]));
+  } else {
+    document.title = `${p.short} · SQNTM DnD Journal`;
+    const list = (tag, items) => el(tag, {}, items.map((t) => el("li", { text: t })));
+    const sec = (sid, title, body, cls = "") => el("section", { id: sid, class: cls }, [el("h2", { text: title }), body]);
+
+    const items = inv ? inv.items : [];
+    $("main").replaceChildren(
+      el("section", { class: "char-hero" }, [el("div", { class: "wrap" }, [
+        el("img", { src: p.img, alt: `Potret ${p.name}` }),
+        el("div", {}, [
+          el("h1", { text: p.name }),
+          el("p", { class: "cls", text: p.cls }),
+          el("ul", { class: "stats" }, g.stats.split(" · ").map((s) => el("li", { text: s }))),
+          el("p", { class: "role", text: p.role }),
+          el("nav", { class: "jump", "aria-label": "Bagian halaman" }, [
+            ["#tonight", "Malam ini"], ["#turn", "Saat bertarung"], ["#abilities", "Kemampuan"],
+            ["#outside", "Di luar pertarungan"], ["#careful", "Hati-hati"], ["#inventory", "Barang bawaan"]
+          ].map(([h, t]) => el("a", { href: h, text: t })))
+        ])
+      ])]),
+      el("div", { class: "wrap char-body" }, [
+        sec("tonight", "Malam ini", list("ul", g.tonight), "tonight"),
+        sec("turn", "Giliranmu saat bertarung", list("ol", g.turn)),
+        sec("abilities", "Kemampuan penting", el("dl", { class: "abilities" }, g.abilities.flatMap(([n, d]) => [el("dt", { text: n }), el("dd", { text: d })]))),
+        sec("outside", "Di luar pertarungan", list("ul", g.outside)),
+        sec("careful", "Hati-hati", list("ul", g.careful)),
+        sec("inventory", "Barang bawaan", el("div", {}, [
+          el("div", { class: "inv-top" }, [
+            el("span", { class: "gold", text: `${inv ? inv.gp : 0} gp` }),
+            el("span", { text: `Diperbarui ${INV.updated}.` })
+          ]),
+          el("table", { class: "inv" }, [
+            el("thead", {}, [el("tr", {}, [el("th", { text: "Barang" }), el("th", { class: "qty", text: "Jumlah" }), el("th", { text: "Catatan" })])]),
+            el("tbody", {}, items.map(([name, qty, note]) =>
+              el("tr", {}, [el("td", { text: name }), el("td", { class: "qty", text: String(qty) }), el("td", { class: "note", text: note || "" })])))
+          ])
+        ]))
+      ])
+    );
+    if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+  }
+</script>
+</body>
+</html>

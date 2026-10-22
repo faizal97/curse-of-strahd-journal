@@ -8,228 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --mist: #dde0d9;
-    --vellum: #eef0ea;
-    --ink: #1e221e;
-    --ink-soft: #4a5049;
-    --wine: #6e1f2b;
-    --candle: #9a6a24;
-    --moss: #4d5c46;
-    --rule: #b9beb4;
-    --display: "IM Fell English", Georgia, serif;
-    --body: "Alegreya Sans", system-ui, sans-serif;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--mist);
-    color: var(--ink);
-    font: 400 1.0625rem/1.55 var(--body);
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--wine); }
-  :focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
-  .wrap { width: min(68rem, 100% - 2rem); margin-inline: auto; }
-
-  /* Top bar */
-  .bar {
-    position: sticky; top: 0; z-index: 5;
-    background: color-mix(in srgb, var(--mist) 88%, transparent);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--rule);
-  }
-  .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .6rem; }
-  .bar strong { font: 400 1.25rem/1 var(--display); }
-  .bar nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
-  .bar nav a { color: var(--ink-soft); text-decoration: none; font-weight: 500; }
-  .bar nav a:hover { color: var(--wine); }
-
-  /* Hero: the cliffhanger */
-  .hero {
-    position: relative; overflow: hidden;
-    min-height: min(74vh, 40rem);
-    display: grid; align-items: end;
-    padding-block: 5rem 3.5rem;
-    isolation: isolate;
-  }
-  .hero::before, .hero::after {
-    content: ""; position: absolute; inset: -20%; z-index: -1;
-    background:
-      radial-gradient(40% 30% at 20% 70%, #fff9 0%, transparent 70%),
-      radial-gradient(35% 25% at 70% 40%, #fff7 0%, transparent 70%),
-      radial-gradient(50% 35% at 50% 90%, #c9cec4 0%, transparent 70%);
-    animation: drift 38s ease-in-out infinite alternate;
-  }
-  .hero::after { animation-duration: 55s; animation-direction: alternate-reverse; opacity: .7; }
-  @keyframes drift { from { transform: translateX(-6%); } to { transform: translateX(6%); } }
-  @media (prefers-reduced-motion: reduce) { .hero::before, .hero::after { animation: none; } html { scroll-behavior: auto; } }
-
-  .hero .context { max-width: 38rem; color: var(--ink-soft); font-size: 1.125rem; margin: 0 0 1.25rem; }
-  /* One warm point in the fog: candlelight behind the door. */
-  .hero .wrap { position: relative; }
-  .hero .wrap::before {
-    content: ""; position: absolute; z-index: -1;
-    left: -4rem; bottom: 2rem; width: min(38rem, 90%); height: 16rem;
-    background: radial-gradient(closest-side, #e8c27a66, #e8c27a1f 60%, transparent);
-    pointer-events: none;
-  }
-  .hero h1 {
-    margin: 0;
-    font: 400 clamp(3.5rem, 13vw, 10rem)/.88 var(--display);
-    letter-spacing: -.02em;
-    color: var(--ink);
-  }
-  .hero .who { margin: 1.25rem 0 0; font: italic 400 1.25rem/1.4 var(--display); color: var(--wine); }
-  .next {
-    margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: .5rem 2rem; align-items: baseline;
-    border-top: 1px solid var(--rule); padding-top: 1rem; color: var(--ink-soft);
-  }
-  .next b { color: var(--ink); font-weight: 700; }
-
-  section { padding-block: 4rem; }
-  h2 { font: 400 clamp(2rem, 5vw, 3rem)/1.05 var(--display); margin: 0 0 .5rem; }
-  .lede { color: var(--ink-soft); margin: 0 0 2rem; max-width: 40rem; }
-
-  /* Next steps: three stages in time order, then reminders */
-  .guide { background: var(--vellum); border-block: 1px solid var(--rule); }
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 2rem 2.5rem; counter-reset: stage; }
-  .stage { counter-increment: stage; }
-  .stage h3 { font: 400 1.5rem/1.2 var(--display); margin: 0 0 .75rem; display: flex; gap: .6rem; align-items: baseline; }
-  .stage h3::before { content: counter(stage); color: var(--candle); font-size: 2.2rem; line-height: 1; }
-  .stage:first-child h3 { color: var(--wine); }
-  .stage ul { margin: 0; padding: 0; list-style: none; }
-  .stage li { padding: .55rem 0; border-top: 1px solid var(--rule); }
-  .team { margin-top: 3.5rem; }
-  .team dl { margin: 0; display: grid; grid-template-columns: minmax(10rem, 16rem) 1fr; }
-  .team dt, .team dd { margin: 0; padding: .65rem 0; border-top: 1px solid var(--rule); }
-  .team dt { font: 400 1.2rem/1.3 var(--display); padding-right: 1.5rem; }
-  .team dd { max-width: 42rem; }
-  @media (max-width: 40rem) {
-    .team dl { grid-template-columns: 1fr; }
-    .team dd { border-top: 0; padding-top: 0; }
-  }
-  .remind { margin-top: 3.5rem; max-width: 46rem; }
-  .remind ul { margin: 0; padding: 0; list-style: none; }
-  .remind li { padding: .6rem 0 .6rem 1.6rem; border-bottom: 1px solid var(--rule); position: relative; }
-  .remind li::before { content: "!"; position: absolute; left: .25rem; top: .45rem; font: 400 1.3rem/1 var(--display); color: var(--wine); }
-
-  /* Quest + threads */
-  .quest {
-    background: var(--vellum); border-left: 4px solid var(--wine);
-    padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; max-width: 44rem;
-  }
-  .quest p { margin: 0; }
-  .quest .name { font: 400 1.75rem/1.2 var(--display); }
-  .quest .from { color: var(--ink-soft); margin-top: .35rem; }
-  .threads { list-style: none; padding: 0; margin: 0; columns: 2 22rem; column-gap: 3rem; }
-  .threads li { break-inside: avoid; padding: .7rem 0 .7rem 1.6rem; border-bottom: 1px solid var(--rule); position: relative; }
-  .threads li::before { content: "?"; position: absolute; left: 0; top: .55rem; font: 400 1.3rem/1 var(--display); color: var(--candle); }
-
-  /* Journal */
-  .journal { border-left: 1px solid var(--rule); margin-left: .6rem; }
-  .entry { position: relative; padding: 0 0 1.75rem 2rem; }
-  .entry::before {
-    content: ""; position: absolute; left: -.42rem; top: .55rem;
-    width: .8rem; height: .8rem; border-radius: 50%;
-    background: var(--mist); border: 2px solid var(--candle);
-  }
-  .entry.latest::before { background: var(--candle); }
-  .entry summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; gap: .25rem 1rem; align-items: baseline; }
-  .entry summary::-webkit-details-marker { display: none; }
-  .entry .num { color: var(--ink-soft); font-weight: 500; min-width: 5.5rem; }
-  .entry .ttl { font: 400 1.6rem/1.2 var(--display); }
-  .entry summary:hover .ttl { color: var(--wine); }
-  .entry .date { color: var(--ink-soft); font-size: .95rem; }
-  .entry.quiet .ttl { color: var(--ink-soft); font-style: italic; }
-  .entry .text {
-    max-width: 40rem; margin-top: 1rem;
-    font: 400 1.18rem/1.7 var(--display);
-  }
-  .entry .text p { margin: 0 0 1rem; }
-  .entry .original { max-width: 40rem; }
-  .entry .original summary { display: inline; color: var(--wine); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
-  .entry .original .text { color: var(--ink-soft); }
-
-  /* Party */
-  .party { display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); gap: .5rem 2.5rem; }
-  .party div { padding: 1rem 0; border-top: 2px solid var(--moss); }
-  .party h3 { font: 400 1.5rem/1.2 var(--display); margin: 0 0 .3rem; }
-  .party p { margin: 0 0 .5rem; color: var(--ink-soft); }
-  .party .cls { color: var(--moss); font-weight: 500; }
-  .party img {
-    width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%;
-    border-radius: 50% 50% 0 0 / 28% 28% 0 0; display: block; margin-bottom: 1rem;
-    background: var(--vellum);
-  }
-  .party > div { border-top: 0; padding-top: 0; }
-  .party h3 { padding-top: .75rem; border-top: 2px solid var(--moss); }
-  .party .role { color: var(--ink); margin: 0; }
-
-  /* People of Barovia */
-  .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 2.5rem 2rem; }
-  .person figure { margin: 0; }
-  .person img {
-    width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top;
-    border-radius: 50% 50% 0 0 / 28% 28% 0 0;
-    background: var(--vellum);
-    display: block;
-  }
-  .person.dead img { filter: grayscale(1) contrast(.9) brightness(.92); }
-  .person h3 { font: 400 1.45rem/1.15 var(--display); margin: .9rem 0 .15rem; }
-  .person .role { color: var(--ink-soft); margin: 0 0 .5rem; font-weight: 500; }
-  .person .fate { color: var(--wine); margin: -.35rem 0 .5rem; font: italic 400 1.05rem/1.3 var(--display); }
-  .person p { margin: 0; }
-
-  /* Per-character tips */
-  .party .open-tips {
-    margin-top: .9rem; font: 500 1rem/1 var(--body); color: var(--vellum);
-    background: var(--moss); border: 0; padding: .65rem 1rem; cursor: pointer;
-  }
-  .party .open-tips:hover { background: var(--wine); }
-  #tips {
-    width: min(46rem, 100vw - 1.5rem); max-height: min(90vh, 60rem);
-    padding: 0; border: 0; background: var(--mist); color: var(--ink);
-    box-shadow: 0 1.5rem 4rem #0007;
-  }
-  #tips::backdrop { background: #1e221eb3; }
-  .tips-head {
-    position: sticky; top: 0; z-index: 1; display: grid; grid-template-columns: 5.5rem 1fr auto; gap: 1rem; align-items: center;
-    padding: 1rem 1.25rem; background: var(--vellum); border-bottom: 1px solid var(--rule);
-  }
-  .tips-head img { width: 5.5rem; height: 6.5rem; object-fit: cover; object-position: center 20%; border-radius: 50% 50% 0 0 / 30% 30% 0 0; }
-  .tips-head h2 { font-size: clamp(1.5rem, 5vw, 2.1rem); margin: 0; }
-  .tips-cls { margin: .2rem 0 0; color: var(--moss); font-weight: 500; }
-  .tips-stats { margin: .2rem 0 0; color: var(--ink-soft); font-size: .95rem; }
-  .tips-close { align-self: start; background: none; border: 0; font-size: 1.4rem; line-height: 1; padding: .3rem .5rem; cursor: pointer; color: var(--ink-soft); }
-  .tips-close:hover { color: var(--wine); }
-  .tips-body { padding: .5rem 1.25rem 2rem; }
-  .tips-body h3 { font: 400 1.45rem/1.2 var(--display); margin: 1.6rem 0 .5rem; }
-  .tips-body h3.urgent { color: var(--wine); }
-  .tips-body ol, .tips-body ul { margin: 0; padding-left: 1.3rem; }
-  .tips-body li { padding: .3rem 0; }
-  .tips-body dl { margin: 0; }
-  .tips-body dt { font-weight: 700; margin-top: .7rem; }
-  .tips-body dd { margin: .15rem 0 0; color: var(--ink-soft); }
-  @media (max-width: 40rem) {
-    .tips-head { grid-template-columns: 4rem 1fr auto; padding: .8rem 1rem; }
-    .tips-head img { width: 4rem; height: 4.8rem; }
-    .tips-body { padding-inline: 1rem; }
-  }
-
-  footer { padding-block: 3rem 4rem; color: var(--ink-soft); border-top: 1px solid var(--rule); }
-  footer p { margin: 0; font: italic 400 1.2rem/1.4 var(--display); }
-
-  @media (max-width: 40rem) {
-    .bar .wrap { flex-wrap: wrap; row-gap: .3rem; }
-    .bar strong { white-space: nowrap; }
-    .bar nav { gap: .9rem; font-size: .95rem; }
-    .hero { padding-block: 3rem 2.5rem; }
-    .entry { padding-left: 1.4rem; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="bar">
@@ -240,6 +19,7 @@
         <a href="#quest">Quest</a>
         <a href="#journal">Journal</a>
         <a href="#party">Party</a>
+        <a href="#loot">Loot</a>
         <a href="#people">People</a>
       </nav>
     </div>
@@ -302,6 +82,23 @@
       </div>
     </section>
 
+    <section id="loot" class="guide">
+      <div class="wrap">
+        <h2>Barang bawaan</h2>
+        <p class="lede">Barang penting milik party dan emas tiap orang. Diperbarui setelah setiap sesi, terakhir <span id="loot-updated"></span>. Barang lengkap tiap orang ada di halaman masing-masing.</p>
+        <div class="loot">
+          <div>
+            <h3>Barang penting</h3>
+            <ul class="loot-shared" id="loot-shared"></ul>
+          </div>
+          <div>
+            <h3>Emas</h3>
+            <ul class="loot-gold" id="loot-gold"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="people">
       <div class="wrap">
         <h2>Penduduk Barovia</h2>
@@ -311,25 +108,13 @@
     </section>
   </main>
 
-  <dialog id="tips" aria-labelledby="tips-name">
-    <div class="tips-head">
-      <img id="tips-img" alt="">
-      <div>
-        <h2 id="tips-name"></h2>
-        <p class="tips-cls" id="tips-cls"></p>
-        <p class="tips-stats" id="tips-stats"></p>
-      </div>
-      <button type="button" class="tips-close" id="tips-close" aria-label="Tutup">✕</button>
-    </div>
-    <div class="tips-body" id="tips-body"></div>
-  </dialog>
 
   <footer>
     <div class="wrap"><p>Aku akan terus mengawasi.</p></div>
   </footer>
 
 <script src="content.js"></script>
-<script src="guides.js"></script>
+<script src="inventory.js"></script>
 <script>
   const c = window.CAMPAIGN;
   const $ = (id) => document.getElementById(id);
@@ -408,42 +193,23 @@
       el("p", { class: "cls", text: p.cls }),
       el("p", { text: p.note }),
       el("p", { class: "role", text: p.role }),
-      window.GUIDES?.[p.id] ? el("button", { type: "button", class: "open-tips", "data-id": p.id, text: `Tips untuk ${p.name.split(" ")[0]}` }) : ""
+      el("a", { class: "open-tips", href: `character.html?id=${p.id}`, text: `Buka halaman ${p.short}` })
     ])));
 
-  // Tips dialog. Each character also has its own link: #tips-duff, #tips-jayn, ...
-  const dlg = $("tips");
-  const section = (title, node, urgent) => [el("h3", { class: urgent ? "urgent" : "", text: title }), node];
-  const openTips = (id) => {
-    const p = c.party.find((x) => x.id === id), g = window.GUIDES[id];
-    if (!p || !g) return;
-    $("tips-img").src = p.img; $("tips-img").alt = `Potret ${p.name}`;
-    $("tips-name").textContent = p.name;
-    $("tips-cls").textContent = p.cls;
-    $("tips-stats").textContent = g.stats;
-    $("tips-body").replaceChildren(
-      ...section("Malam ini", el("ul", {}, g.tonight.map((t) => el("li", { text: t }))), true),
-      ...section("Giliranmu saat bertarung", el("ol", {}, g.turn.map((t) => el("li", { text: t })))),
-      ...section("Kemampuan penting", el("dl", {}, g.abilities.flatMap(([n, d]) => [el("dt", { text: n }), el("dd", { text: d })]))),
-      ...section("Di luar pertarungan", el("ul", {}, g.outside.map((t) => el("li", { text: t })))),
-      ...section("Hati-hati", el("ul", {}, g.careful.map((t) => el("li", { text: t }))))
-    );
-    if (!dlg.open) dlg.showModal();
-    $("tips-body").scrollTop = 0; dlg.scrollTop = 0;
-    if (location.hash !== `#tips-${id}`) history.replaceState(null, "", `#tips-${id}`);
-  };
-  document.addEventListener("click", (e) => {
-    const b = e.target.closest(".open-tips");
-    if (b) openTips(b.dataset.id);
-  });
-  const clearHash = () => { if (location.hash.startsWith("#tips-")) history.replaceState(null, "", location.pathname + location.search); };
-  $("tips-close").addEventListener("click", () => { dlg.close(); clearHash(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && dlg.open) setTimeout(clearHash, 0); });
-  dlg.addEventListener("click", (e) => { if (e.target === dlg) { dlg.close(); clearHash(); } });
-  dlg.addEventListener("close", () => { if (!dlg.open && location.hash.startsWith("#tips-")) history.replaceState(null, "", location.pathname + location.search); });
-  const fromHash = () => { const m = location.hash.match(/^#tips-(.+)$/); if (m) openTips(m[1]); };
-  window.addEventListener("hashchange", fromHash);
-  fromHash();
+  // Old share links (#tips-duff) now go to the character's own page.
+  const legacy = location.hash.match(/^#tips-(.+)$/);
+  if (legacy) location.replace(`character.html?id=${legacy[1]}`);
+
+  // Shared loot
+  const inv = window.INVENTORY;
+  $("loot-updated").textContent = inv.updated;
+  $("loot-shared").replaceChildren(...inv.shared.map((i) =>
+    el("li", {}, [el("b", { text: i.item }), ` · ${i.holder}`, i.note ? el("span", { class: "note", text: i.note }) : ""])));
+  const total = c.party.reduce((sum, p) => sum + (inv.people[p.id]?.gp || 0), 0);
+  $("loot-gold").replaceChildren(
+    ...c.party.map((p) => el("li", {}, [el("a", { href: `character.html?id=${p.id}#inventory`, text: p.short }), el("span", { text: `${inv.people[p.id]?.gp ?? 0} gp` })])),
+    el("li", { class: "total" }, [el("span", { text: "Total" }), el("span", { text: `${total} gp` })])
+  );
 
   // NPCs
   $("npcs").replaceChildren(...c.npcs.map((n) =>
