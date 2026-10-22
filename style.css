@@ -201,3 +201,9 @@
   @media (max-width: 48rem) { .loot { grid-template-columns: 1fr; } }
 
   footer p.fresh { margin-top: .6rem; font: 400 .95rem/1.4 var(--body); font-style: normal; color: var(--ink-soft); }
+
+  .person .noimg {
+    width: 100%; aspect-ratio: 2 / 1; display: grid; place-items: center;
+    border-radius: 50% 50% 0 0 / 28% 28% 0 0; background: var(--vellum); border: 1px solid var(--rule);
+    font: 400 4rem/1 var(--display); color: var(--rule);
+  }

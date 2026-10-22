@@ -2,55 +2,55 @@
 window.CAMPAIGN = {
   title: "Curse of Strahd",
   table: "Meja kita di Roll20",
-  nextSession: "2026-10-22T21:00:00+07:00",
+  // ISO date-time of the next game, or null when it isn't set yet.
+  nextSession: null,
 
   // Which session each part was last checked against. Run `node check.mjs` after every update:
   // anything older than the latest session in `sessions` is reported as outdated.
-  lastUpdate: { session: 5, date: "22 Okt 2026" },
-  reviewed: { leftOff: 5, nextSteps: 5, teamwork: 5, reminders: 5, threads: 5, quest: 5, party: 5, npcs: 5 },
+  lastUpdate: { session: 6, date: "22 Okt 2026" },
+  reviewed: { leftOff: 6, nextSteps: 6, teamwork: 6, reminders: 6, threads: 6, quest: 6, party: 6, npcs: 6 },
 
   leftOff: {
-    session: 5,
-    text: "Giliran jaga ketiga. Bromli duduk sendirian di dekat pintu rumah Burgomaster sementara yang lain tidur. Ireena turun dari tangga dan bicara padanya. Lalu Ismark juga. Keduanya meminta hal yang sama. Bromli menyalakan perapian, lalu seseorang menepuk pundaknya.",
-    quote: "Buka pintunya."
+    session: 6,
+    text: "Pagi di Barovia. Kolyan sudah dimakamkan di gereja di atas bukit, tanpa satu mantra pun. Father Donavich, yang mengaku sudah dua minggu tidak tidur, hendak meminta sesuatu dari kita. Duff, Cha Garr, dan Ireena masih berdiri di gereja.",
+    quote: "Apa yang diminta Donavich?"
   },
 
   quest: {
-    name: "Bawa Ireena ke tempat yang lebih aman",
-    from: "Permintaan terakhir Kolyan Indirovich, disampaikan oleh Ismark"
+    name: "Antar Ireena ke Vallaki dan temui Danica",
+    from: "Permintaan terakhir Kolyan agar Ireena dibawa ke tempat yang lebih aman. Ismark menyuruh kita menemui Danica di Vallaki, sekitar 14 jam jalan kaki."
   },
 
   // What the table could do next, grouped by when. Only uses what we've seen at the table.
   nextSteps: [
     {
-      when: "Malam ini, di depan pintu",
+      when: "Di awal sesi berikutnya, di gereja",
       steps: [
-        "Bromli: seseorang baru saja menepuk pundakmu. Berbalik dengan hati-hati dan lihat dulu siapa itu sebelum menyerang. Bisa jadi teman, bisa jadi bukan.",
-        "Jangan buka pintunya dulu.",
-        "Membangunkan yang lain membuat semua kena disadvantage. Bangunkan hanya kalau benar-benar terjadi pertarungan.",
-        "Kamar Ireena dan Ismark di atas terkunci. Kalau mereka terkunci di dalam, bagaimana mereka bisa turun dan bicara pada Bromli?",
-        "Ketuk pintu kamar dan panggil nama mereka. Kalau yang asli menjawab dari dalam, yang di bawah itu palsu. Tanya DM dulu apakah ini dihitung membangunkan orang.",
-        "Uji mereka. Ismark yang asli suka melucu untuk menutupi rasa takut. Ireena yang asli melindungi orang yang ia sayangi, bukan membahayakan mereka.",
-        "Kalau Duff terpaksa dibangunkan, ia bisa memakai Divine Sense untuk merasakan mayat hidup atau iblis di dalam ruangan. Pintu yang tertutup menghalanginya."
+        "Dengarkan permintaan Father Donavich sampai selesai sebelum menjawab. Tanya apa imbalannya, dan apa risikonya.",
+        "Tanya kenapa ia tidak bisa tidur selama dua minggu. Pakai Insight untuk melihat apakah ia menyembunyikan sesuatu.",
+        "Doakan makam Kolyan, karena ia dimakamkan tanpa mantra. Duff dan Cha Garr bisa melakukannya.",
+        "Tanya Donavich tentang Seriach, Sykane, dan Zantras, tentang Danica, dan minta air suci untuk perjalanan.",
+        "Duff tetap di sebelah Ireena selama di gereja."
       ]
     },
     {
-      when: "Begitu pagi tiba",
+      when: "Sebelum berangkat ke Vallaki",
       steps: [
-        "Tepati janji: beri daging kepada gagak berbulu biru. Siapkan dagingnya sebelum keluar rumah.",
-        "Baca surat jalan dari meja Kolyan bersama-sama. Nama siapa saja yang tertulis, dan ke mana tujuannya?",
-        "Tanya Ismark di mana pedang keluarga Indirovich, dan ke mana jasad Kolyan dibawa.",
-        "Tanya Ireena sendiri apa yang ia mau. Dia ikut berjuang, bukan barang bawaan.",
-        "Cha Garr sebaiknya tidak keluar sendirian sampai kita tahu kenapa anak itu memanggilnya."
+        "Bicara dengan Ireena. Ia sebenarnya tidak ingin pergi. Tanyakan alasannya dan jawab alasan itu, jangan memaksanya.",
+        "Putuskan apakah Ismark ikut atau tetap memimpin desa.",
+        "Temui Mary: nama anaknya, ciri-cirinya, dan sejak kapan hilang, supaya gagak tahu apa yang dicari.",
+        "Baca surat jalan dari meja Kolyan bersama-sama, dan catat siapa yang menyimpannya.",
+        "Tanya Dan Garr: dari ketiga nama itu, siapa yang menginginkan jiwa, siapa yang menginginkan kepala, dan siapa sang kingmaker?",
+        "Belanja di toko Bildrath: ransum (juga untuk Ireena dan gagak), bedroll dan waterskin untuk Jayn, bolt untuk Dan Garr, air suci, minyak lampu. Tanyakan kuda atau gerobak."
       ]
     },
     {
-      when: "Sebelum meninggalkan desa",
+      when: "Di jalan ke Vallaki",
       steps: [
-        "Belanja di toko Bildrath: air suci, minyak, obor, perban, ransum. Jangan terlihat putus asa, harganya bisa naik.",
-        "Tanya Bildrath atau Parriwimple barang apa saja yang mereka pungut dari medan perang.",
-        "Mampir ke gereja tempat Jayn mengambil air suci. Siapa yang menjaganya sekarang?",
-        "Tanya para Vistani kenapa mereka membenci Ismark, tapi jangan ceritakan rencana kita."
+        "Berangkat sepagi mungkin. 14 jam jalan kaki berarti setidaknya satu malam di jalan.",
+        "Biarkan gagak terbang di depan untuk mengintai, dan beri makan setiap hari.",
+        "Berkemah sebelum gelap. Api unggun, obor, dan jaga malam berdua-dua. Dan Garr jangan berjaga sendirian.",
+        "Formasi: Bromli di depan, Duff di sebelah Ireena, Jayn dan Cha Garr di tengah, Dan Garr mengintai."
       ]
     }
   ],
@@ -58,61 +58,67 @@ window.CAMPAIGN = {
   // Who to lean on for what, from everyone's character sheet.
   teamwork: [
     { need: "Melawan mayat hidup", who: "Cha Garr memakai Turn Undead dan Sacred Flame. Duff memakai Divine Smite, 3d8 radiant melawan mayat hidup." },
+    { need: "Melawan iblis (fiend)", who: "Duff memakai Turn the Faithless untuk mengusir fey dan iblis dalam 30 ft dan membuka wujud aslinya. Divine Smite juga 3d8 melawan iblis." },
+    { need: "Merasakan yang tak terlihat", who: "Duff memakai Divine Sense: mayat hidup, iblis, celestial, dan tempat yang suci atau dinodai dalam 60 ft." },
     { need: "Ada yang tumbang", who: "Cha Garr memakai Healing Word dari jarak 60 ft sebagai bonus action. Duff memakai Lay on Hands, 15 HP per istirahat panjang." },
     { need: "Menjaga Ireena", who: "Duff berdiri di sebelahnya (AC 18, Sentinel). Cha Garr bisa menutup jalan dengan Spike Growth." },
     { need: "Diserang panah dari jauh", who: "Dan Garr bisa menangkis panah dengan Deflect Missiles dan paling cepat mengejar pemanah." },
     { need: "Pintu terkunci atau jebakan", who: "Jayn. Thieves' tools dan Sleight of Hand +7." },
-    { need: "Bicara dengan gagak atau hewan lain", who: "Cha Garr dan Duff sama-sama punya Speak with Animals. Pakai saat menemui gagak berbulu biru." },
+    { need: "Bicara dengan gagak", who: "Cha Garr merapal Speak with Animals sebagai ritual, 10 menit, tanpa memakai slot mantra. Duff juga bisa, tapi memakai slot." },
     { need: "Bertarung dalam gelap", who: "Bromli, Cha Garr, dan Dan Garr punya darkvision. Jayn dan Duff butuh obor." },
     { need: "Belanja di toko Bildrath", who: "Gabungan emas kita sekitar 410 gp menurut sheet: Bromli 130, Duff 110, Dan Garr 100, Jayn 60, Cha Garr 10." }
   ],
 
   // Things the table tends to forget.
   reminders: [
-    "Menurut sheet terakhir, Jayn tinggal 11 dari 24 HP dan Cha Garr 17 dari 24. Sembuhkan sebelum ada pertarungan.",
-    "Kita berjanji pada seekor gagak untuk memberi daging kepada gagak berbulu biru pagi ini. Di negeri seperti ini, janji kecil bisa berarti besar.",
-    "Ada sesuatu yang menabrak jendela di sesi 4 lalu menghilang. Belum ada yang menyelidikinya.",
+    "Seriach (hellhound), Sykane (di balik cermin), dan Zantras ada di sekitar ruangan jasad Kolyan. Satu menginginkan jiwa, satu menginginkan kepala, satu adalah kingmaker. Mereka dari domain yang sama tapi saling bermusuhan. Jangan terima tawaran apa pun dari mereka.",
+    "Sejak pagi ini, Duff selalu merasa ada yang mengawasinya.",
+    "Kolyan dimakamkan tanpa mantra atau berkat apa pun.",
+    "Father Donavich sangat kelelahan dan belum tidur dua minggu.",
+    "Gagak sekarang ikut kita selama diberi makan. Bawa daging atau ransum ekstra.",
+    "Yang menabrak jendela di sesi 4 bukan burung. Gagak melihat sesuatu malam itu.",
+    "Vallaki 14 jam jalan kaki. Kita pasti bermalam di jalan.",
+    "Ireena sebenarnya tidak ingin meninggalkan desa.",
     "Serigala di sini tidak gentar pada api. Jangan mengandalkan obor untuk mengusir mereka.",
     "Pemanah tanpa daging di jarinya masih berkeliaran di sekitar hutan.",
-    "Mayat hidup yang membunuh Kolyan tidak dihancurkan. Mereka kembali ke hutan.",
     "Gerbang hanya terbuka bagi yang sudah diklaim kabut. Jalan pulang mungkin tidak ada.",
-    "Lilin di lorong atas berkedip seolah ada yang lewat. Sesuatu mungkin sudah ada di dalam rumah.",
-    "Malam ini belum selesai, jadi istirahat panjang belum terhitung. Cek sisa HP dan slot mantra sebelum mulai.",
-    "Jayn mengambil air suci dari gereja. Pastikan kita tahu masih ada berapa.",
-    "Misi kita dari Kolyan: bawa Ireena ke tempat yang lebih aman. Semua keputusan sebaiknya diukur dari situ."
+    "Semalam dihitung istirahat panjang. Semua HP dan slot mantra kembali penuh, tapi Duff sudah memakai 1 dari 4 Divine Sense pagi ini."
   ],
 
   threads: [
-    "Siapa yang menepuk pundak Bromli di depan perapian?",
-    "Apa yang menabrak jendela di sesi 4, dan ke mana perginya?",
-    "Siapa gagak berbulu biru itu, dan kenapa ia minta daging dari kita?",
-    "Apa isi surat jalan dari meja Kolyan, dan nama siapa yang dikenali salah satu dari kita?",
+    "Apa yang ingin diminta Father Donavich setelah pemakaman?",
+    "Kenapa Donavich tidak bisa tidur selama dua minggu?",
+    "Siapa Seriach, Sykane, dan Zantras? Mana yang menginginkan jiwa, mana yang menginginkan kepala, dan siapa sang kingmaker?",
+    "Siapa yang terus mengawasi Duff, dan apakah ia sama dengan penulis jurnal ini?",
+    "Siapa Danica di Vallaki? Apakah ia salah satu dari dua pendeta kuat yang disebut?",
+    "Di mana anak Mary?",
+    "Apa yang dilihat gagak malam itu, dan apa yang sebenarnya menabrak jendela di sesi 4?",
+    "Apa isi surat jalan dari meja Kolyan, siapa yang menyimpannya, dan nama siapa yang dikenali salah satu dari kita?",
     "Siapa anak di balik jendela, dan kenapa ia hanya memanggil Cha Garr untuk mencari papanya?",
-    "Apa yang berjalan melewati lilin-lilin di lorong atas?",
-    "Apakah yang di depan pintu itu benar-benar Ireena dan Ismark?",
-    "Kenapa mayat hidup itu hanya mengincar Kolyan, lalu kembali ke hutan?",
-    "Ke mana warga membawa jasad Kolyan, dan di mana pedang keluarga Indirovich?",
+    "Apakah yang meminta Bromli membuka pintu semalam benar-benar Ireena dan Ismark?",
+    "Di mana pedang cadangan hadiah dari Kolyan?",
+    "Kenapa Ireena sebenarnya tidak ingin pergi?",
+    "Kenapa mayat hidup itu hanya mengincar Kolyan?",
     "Kenapa serigala-serigala itu tidak gentar pada api?",
-    "Kenapa para wanita Vistani membenci Ismark?",
-    "Siapa penulis jurnal ini, dan kenapa ia terus mengawasi kita?"
+    "Kenapa para wanita Vistani membenci Ismark?"
   ],
 
   party: [
     { id: "bromli", short: "Bromli", name: "Bromli \"Never Knock\" Beerhammer", img: "img/bromli.webp", cls: "Dwarf Gunung · Barbarian 3 (Path of the Beast)",
-      note: "Si pemabuk yang datang lewat gerbang. Dari keluarga penambang Gold and Hammer Company. Berjaga sendirian di giliran ketiga dan yang mendengar permintaan di depan pintu.",
+      note: "Si pemabuk yang datang lewat gerbang. Dari keluarga penambang Gold and Hammer Company. Berjaga sendirian di giliran ketiga, mencegah Ireena membuka pintu depan pagi itu.",
       role: "Pemukul utama. Rage dan greataxe. Bisa melihat dalam gelap." },
     { id: "cha-garr", short: "Cha Garr", name: "Cha Garr", img: "img/cha-garr.webp", cls: "Half-Elf · Cleric 3 (Nature Domain)",
-      note: "Si ulama yang merasakan sihir tua di batu-batu Barovia. Anak di balik jendela hanya bicara padanya.",
+      note: "Si ulama yang merasakan sihir tua di batu-batu Barovia. Anak di balik jendela hanya bicara padanya. Melihat sosok besar di belakangnya lewat cermin di ruangan jasad Kolyan.",
       role: "Penyembuh dan pengusir mayat hidup. Turn Undead, Healing Word, Spike Growth, bisa bicara dengan hewan." },
     { id: "dan-garr", short: "Dan Garr", name: "Dan Garr", img: "img/dan-garr.webp", cls: "Half-Elf · Monk 3 (Way of the Open Hand)",
-      note: "Si biarawan yang seolah sudah berdamai dengan kematian. Mendengar sesuatu menabrak jendela di sesi 4, lalu tidur.",
+      note: "Si biarawan yang seolah sudah berdamai dengan kematian. Mendengar sesuatu menabrak jendela di sesi 4. Tahu sedikit tentang Seriach, Sykane, dan Zantras.",
       role: "Paling cepat (40 ft). Deflect Missiles untuk menangkis panah. Bisa melihat dalam gelap." },
     { id: "jayn", short: "Jayn", name: "Jayn Azza", img: "img/jayn.webp", cls: "Halfling · Rogue 3 (Thief)",
       note: "Si pencuri yang tak percaya siapa pun. Berlari sendirian ke gereja mencari air suci. Membobol kunci meja Kolyan.",
       role: "Kunci, jebakan, menyelinap. Sneak Attack. Butuh cahaya, tidak punya darkvision." },
     { id: "duff", short: "Duff", name: "Duff Tareezy", img: "img/duff.webp", cls: "Human · Paladin 3 (Oath of the Ancients)",
-      note: "Paladin Evergreen Dawn. Bergabung di malam panjang itu dan melihat anak di balik jendela.",
-      role: "Pelindung Ireena. AC 18, Sentinel, Divine Smite, Lay on Hands, bisa bicara dengan hewan." }
+      note: "Paladin Evergreen Dawn. Bergabung di malam panjang itu. Divine Sense-nya menemukan tiga nama di ruangan jasad Kolyan, dan sejak itu ia selalu merasa diawasi.",
+      role: "Pelindung Ireena. AC 18, Sentinel, Divine Smite, Lay on Hands, Turn the Faithless." }
   ],
 
   sessions: [
@@ -197,16 +203,42 @@ While they searched the shelves, the child floated up outside the glass. It didn
 At the end of the watch, the candles along the upstairs hall began to flicker one by one, as if someone were walking past them. The party went to sleep.
 
 Bromli took the third watch alone. Ireena came down the stairs and talked to him. Then Ismark did. Both of them asked for the same thing: "Open the door."`
+    },
+    {
+      n: 6, date: "22 Okt 2026", title: "Pagi Setelah Malam Panjang", lang: "id", fromTable: true,
+      text: `Jurnal belum menulis sesi ini. Ini yang diingat meja kita.
+
+Yang menepuk pundak Bromli ternyata Ireena. Ia berterima kasih karena Bromli menemaninya sampai pagi, lalu mencoba membuka pintu depan. Bromli mencegahnya dan menutupnya kembali. Ireena naik ke atas dan membangunkan kita semua. Malam itu dihitung sebagai istirahat panjang.
+
+Ismark biasa memakai pedang keluarga Indirovich. Ada satu pedang lagi, pedang cadangan hadiah dari ayah mereka. Ireena lebih suka pedangnya sendiri, yang ia pakai sejak kecil.
+
+Di ruangan tempat jasad Kolyan dibaringkan, Cha Garr melihat lewat cermin sesosok besar berdiri di belakangnya. Divine Sense Duff menangkap tiga nama: Seriach, seekor hellhound, Sykane di balik cermin, dan Zantras. Menurut Dan Garr, satu dari mereka menginginkan jiwa, satu menginginkan kepala, dan satu adalah kingmaker. Mereka berasal dari domain yang sama tapi saling bermusuhan. Sejak saat itu Duff selalu merasa ada yang mengawasinya.
+
+Kita mendengar ada dua pendeta kuat, satu di Vallaki dan satu di Krezk (ejaan belum pasti). Ismark menyuruh kita menemui seseorang bernama Danica di Vallaki, sekitar 14 jam jalan kaki. Kita memutuskan membawa Ireena ke sana, walau dalam hatinya ia tidak ingin pergi.
+
+Duff memberi makan gagak. Gagak itu melihat sesuatu malam itu, tapi tidak melihat burung apa pun menabrak jendela. Kita menitipkan pencarian anak Mary, warga desa yang menangis semalaman. Gagak itu akan menemani kita selama diberi makan.
+
+Duff, Cha Garr, dan Ireena pergi ke gereja di atas bukit. Father Donavich memakamkan Kolyan tanpa merapal mantra apa pun. Ia tampak sangat kelelahan dan mengaku sudah dua minggu tidak tidur. Setelah pemakaman, ia hendak meminta sesuatu dari kita.`
     }
   ],
 
   npcs: [
-    { name: "Kolyan Indirovich", role: "Burgomaster desa Barovia", status: "dead", fate: "Gugur mempertahankan desa, sesi 2", img: "img/kolyan.png",
-      text: "Ayah Ismark dan Ireena. Ahli pedang dan panah yang setia pada Dewa Morninglord. Ia menyelamatkan kita dari kepungan serigala, lalu gugur mempertahankan desa. Pedang keluarganya belum terlihat lagi sejak itu. Ia meminta agar Ireena dibawa ke tempat yang lebih aman." },
+    { name: "Kolyan Indirovich", role: "Burgomaster desa Barovia", status: "dead", fate: "Gugur mempertahankan desa, sesi 2. Dimakamkan di gereja di atas bukit, sesi 6.", img: "img/kolyan.png",
+      text: "Ayah Ismark dan Ireena. Ahli pedang dan panah yang setia pada Dewa Morninglord. Ia menyelamatkan kita dari kepungan serigala, lalu gugur mempertahankan desa. Ia meminta agar Ireena dibawa ke tempat yang lebih aman. Ia dimakamkan tanpa mantra atau berkat, dan sesuatu tampaknya tertarik pada jasadnya." },
     { name: "Ireena Kolyana", role: "Putri Kolyan", img: "img/ireena.webp",
-      text: "Adik Ismark. Ia menyaksikan ayahnya mati dan tetap berdiri tegak. Berani menghadapi rasa takutnya sendiri demi orang-orang yang ia sayangi. Dialah yang kita sumpah untuk lindungi." },
+      text: "Adik Ismark. Ia menyaksikan ayahnya mati dan tetap berdiri tegak. Lebih suka pedangnya sendiri, yang ia pakai sejak kecil. Akan kita antar ke Vallaki, walau dalam hatinya ia tidak ingin pergi." },
     { name: "Ismark Kolyanovich", role: "Putra Kolyan, kini kepala keluarga", img: "img/ismark.webp",
-      text: "Melucu untuk menutupi rasa takutnya dan membiarkan hinaan berlalu. Bukan petarung terbaik, tapi rela melakukan apa saja demi Ireena. Kita menemukannya menenggelamkan duka di Blood of the Vine." },
+      text: "Melucu untuk menutupi rasa takutnya. Bukan petarung terbaik, tapi rela melakukan apa saja demi Ireena. Biasa memakai pedang keluarga Indirovich. Menyuruh kita menemui Danica di Vallaki, dan ingin memeriksa keadaan desa." },
+    { name: "Father Donavich", role: "Pendeta gereja di atas bukit",
+      text: "Memakamkan Kolyan tanpa merapal mantra apa pun. Sangat kelelahan, mengaku sudah dua minggu tidak tidur. Hendak meminta sesuatu dari kita setelah pemakaman. (Ejaan nama belum pasti.)" },
+    { name: "Danica", role: "Di Vallaki, belum kita temui",
+      text: "Ismark menyuruh kita menemuinya di Vallaki. Belum diketahui siapa dia, dan apakah dia salah satu dari dua pendeta kuat yang disebut." },
+    { name: "Mary", role: "Warga desa Barovia",
+      text: "Menangis semalaman karena anaknya hilang. Kita menitipkan pencarian anaknya pada gagak." },
+    { name: "Gagak", role: "Teman perjalanan kita",
+      text: "Meminta daging untuk gagak berbulu biru di sesi 4. Sekarang ikut bersama kita selama diberi makan. Melihat sesuatu malam itu, tapi bukan burung yang menabrak jendela." },
+    { name: "Seriach, Sykane, dan Zantras", role: "Tiga kehadiran yang ditangkap Divine Sense",
+      text: "Ditemukan di ruangan jasad Kolyan. Seriach adalah hellhound, Sykane berada di balik cermin. Satu menginginkan jiwa, satu menginginkan kepala, satu adalah kingmaker. Berasal dari domain yang sama tapi saling bermusuhan." },
     { name: "Bildrath Cantemir", role: "Pemilik toko", img: "img/bildrath.webp",
       text: "Pemilik toko serba ada di desa, mengisi dagangannya dengan barang dari mayat. Baginya, yang hidup berhak mengambil apa pun yang ditinggalkan orang mati. Licik dalam tawar-menawar dan meraup untung dari kepanikan warga." },
     { name: "Parriwimple", role: "Sepupu Bildrath", img: "img/parriwimple.webp",

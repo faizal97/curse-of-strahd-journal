@@ -1,0 +1,28 @@
+# Session 6 live log (22 Okt 2026), from the player during play
+
+- Bromli turned around at the shoulder tap: it was Ireena. She said "makasih ya udh nemenin sampai pagi". Night seems over (morning).
+- Ireena tried to open the front door; Bromli stopped her and closed it again.
+- Ireena went upstairs, then woke the party (Duff awake now).
+- Duff asked Ireena whether she was still up at 2am. (answer: not yet recorded)
+- Duff and Bromli in the kitchen together.
+- Indirovich family sword: usually used by Ismark. There is a second, spare sword, a gift from their father. Ireena prefers her own sword, the one she has used since she was small.
+- Kolyan will be buried THIS MORNING at the church on the hill ("gereja atas"). Priest: Father Donavich (name unsure).
+- Kolyan's body is in a room in the house (not the forest?). Dan Garr went to that room. Writ of passage holder still not asked.
+- Ismark wants to go out to check on the village.
+- Cha Garr in the room with Kolyan's body: sensed in the MIRROR a large figure standing behind him.
+- Duff used Divine Sense in that room. DM named presences: Seriach (a hellhound), Sykane (behind the mirror), Zantras. Spelling per player; type (fiend?) to confirm.
+- DM to Duff: "you always feel someone seeing you", from this point forward (ongoing for Duff).
+- Dan Garr's lore on the three names: one wants SOULS, one wants HEADS, one is a KINGMAKER. Same domain, but they are enemies of each other. (Which name = which: not yet known.)
+- Last night counted as a LONG REST (per player): everyone at full HP. Duff after Divine Sense: slots 3/3, Divine Sense 3/4, Lay on Hands 15/15, Channel Divinity 1/1.
+- Told at the table: there are 2 powerful priests, one in VALLAKI and one in "Crest" (spelling unsure, possibly Krezk).
+- Ismark: go meet someone named DANICA in Vallaki.
+- Vallaki is about 14 hours away on foot.
+- DECISION: the party will take Ireena to Vallaki (to meet Danica).
+- Ireena, deep down, does NOT want to leave.
+- Duff fed the crow (promise from S4).
+- Talked to the crow: it SAW SOMETHING at night, but did NOT see any crow/bird hit the window (so the S4 window thing was not a bird).
+- Party asked the crow to search for the missing child of MARY, a villager who cried all night.
+- The crow will travel with the party as long as it is fed. (Companion! Needs food: plan rations.)
+- Duff, Cha Garr and Ireena went to the church to meet the priest.
+- Father Donavich looks heavily exhausted (like exhaustion level 3-4). He buried Kolyan WITHOUT casting any spell.
+- Donavich says he has not slept for 2 weeks (player wording: "tidur sudah 2 minggu"; confirm meaning).

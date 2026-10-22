@@ -133,9 +133,13 @@
   $("leftoff").textContent = c.leftOff.quote;
   $("leftoff-who").textContent = `Posisi terakhir kita, akhir sesi ${c.leftOff.session}.`;
 
-  const next = new Date(c.nextSession);
+  const next = c.nextSession ? new Date(c.nextSession) : null;
   const fmt = new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
   const tick = () => {
+    if (!next) {
+      $("next").replaceChildren(el("span", {}, ["Sesi berikutnya: ", el("b", { text: "belum ditentukan" })]));
+      return;
+    }
     const ms = next - Date.now();
     let left;
     if (ms <= 0 && ms > -5 * 3600e3) left = "Sedang dimainkan";
@@ -216,7 +220,9 @@
   // NPCs
   $("npcs").replaceChildren(...c.npcs.map((n) =>
     el("article", { class: "person" + (n.status === "dead" ? " dead" : "") }, [
-      el("figure", {}, [el("img", { src: n.img, alt: `Potret ${n.name}`, loading: "lazy" })]),
+      el("figure", {}, [n.img
+        ? el("img", { src: n.img, alt: `Potret ${n.name}`, loading: "lazy" })
+        : el("div", { class: "noimg", "aria-hidden": "true", text: n.name.charAt(0) })]),
       el("h3", { text: n.name }),
       el("p", { class: "role", text: n.role }),
       n.fate ? el("p", { class: "fate", text: n.fate }) : "",

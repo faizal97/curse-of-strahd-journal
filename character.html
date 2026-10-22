@@ -114,13 +114,13 @@
           el("ul", { class: "stats" }, g.stats.split(" · ").map((s) => el("li", { text: s }))),
           el("p", { class: "role", text: p.role }),
           el("nav", { class: "jump", "aria-label": "Bagian halaman" }, [
-            ["#tonight", "Malam ini"], ["#turn", "Saat bertarung"], ["#abilities", "Kemampuan"],
+            ["#tonight", "Sesi berikutnya"], ["#turn", "Saat bertarung"], ["#abilities", "Kemampuan"],
             ["#outside", "Di luar pertarungan"], ["#careful", "Hati-hati"], ["#inventory", "Barang bawaan"]
           ].map(([h, t]) => el("a", { href: h, text: t })))
         ])
       ])]),
       el("div", { class: "wrap char-body" }, [
-        sec("tonight", "Malam ini", list("ul", g.tonight), "tonight"),
+        sec("tonight", "Sesi berikutnya", list("ul", g.tonight), "tonight"),
         sec("turn", "Giliranmu saat bertarung", list("ol", g.turn)),
         sec("abilities", "Kemampuan penting", el("dl", { class: "abilities" }, g.abilities.flatMap(([n, d]) => [el("dt", { text: n }), el("dd", { text: d })]))),
         sec("outside", "Di luar pertarungan", list("ul", g.outside)),

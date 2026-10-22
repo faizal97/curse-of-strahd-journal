@@ -1,15 +1,17 @@
 // Inventory, from each player's Roll20 sheet. Update after every session.
 // Each item: [name, quantity, optional note]
 window.INVENTORY = {
-  updated: "22 Okt 2026, dari sheet Roll20",
-  asOf: 5,
+  updated: "22 Okt 2026, setelah sesi 6 (emas dan barang belum berubah sejak sheet Roll20)",
+  asOf: 6,
 
   // Quest items and things the whole party should know about
   shared: [
-    { item: "Surat jalan dari meja Kolyan", holder: "Pemegang belum dicatat", note: "Berisi nama-nama yang dikenali salah satu dari kita. Mungkin kunci untuk membawa Ireena keluar." },
+    { item: "Surat jalan dari meja Kolyan", holder: "Pemegang belum dicatat", note: "Berisi nama-nama yang dikenali salah satu dari kita. Mungkin berguna di Vallaki." },
     { item: "Barang lain dari meja Kolyan", holder: "Belum dicatat", note: "Jurnal menyebut ada barang lain yang disembunyikan. Catat apa saja isinya." },
-    { item: "Air suci dari gereja", holder: "Jayn", note: "Jumlahnya belum dicatat. Bagus melawan mayat hidup." },
-    { item: "Daging untuk gagak berbulu biru", holder: "Siapa saja", note: "Ransum berisi dendeng. Bromli, Duff, dan Dan Garr masing-masing punya 10." }
+    { item: "Pedang keluarga Indirovich", holder: "Ismark", note: "Pedang yang biasa dipakai Ismark." },
+    { item: "Pedang cadangan, hadiah dari Kolyan", holder: "Belum dicatat", note: "Belum diketahui di mana sekarang." },
+    { item: "Air suci dari gereja", holder: "Jayn", note: "Jumlahnya belum dicatat. Bisa juga diminta dari Father Donavich." },
+    { item: "Makanan untuk gagak", holder: "Siapa saja", note: "Gagak ikut kita selama diberi makan. Duff sudah memberinya makan pagi ini. Bawa daging atau ransum ekstra." }
   ],
 
   people: {

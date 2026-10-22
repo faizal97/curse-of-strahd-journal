@@ -36,11 +36,11 @@ for (const n of c.npcs) {
 }
 const nums = c.sessions.map((s) => s.n).sort((a, b) => a - b);
 nums.forEach((n, i) => { if (n !== i + 1) problems.push(`session numbers skip or repeat around ${n}`); });
-if (new Date(c.nextSession) < Date.now() - 6 * 3600e3) problems.push(`nextSession (${c.nextSession}) is in the past: set the next date`);
+if (c.nextSession && new Date(c.nextSession) < Date.now() - 6 * 3600e3) problems.push(`nextSession (${c.nextSession}) is in the past: set the next date, or null if unknown`);
 
 if (problems.length) {
   console.log(`Outdated or broken (latest session: ${latest}):`);
   for (const p of problems) console.log(`  - ${p}`);
   process.exit(1);
 }
-console.log(`All parts reviewed through session ${latest}. Next session: ${c.nextSession}`);
+console.log(`All parts reviewed through session ${latest}. Next session: ${c.nextSession ?? "not set yet"}`);

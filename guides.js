@@ -2,7 +2,7 @@
 // Keyed by the party member's id in content.js. Rules follow the sheets: 5e 2014 plus Tasha's options.
 window.GUIDES = {
   duff: {
-    asOf: 5,
+    asOf: 6,
     stats: "AC 18 · HP 25 · Init -1 · Speed 30 · DC mantra 13",
     turn: [
       "Ronde pertama: Bless (action) kalau teman-teman sedang menyerang. Kalau tidak, serang lalu pakai Compelled Duel atau Shield of Faith (bonus action).",
@@ -25,9 +25,11 @@ window.GUIDES = {
       "Insight +3 untuk membaca apakah seseorang berbohong."
     ],
     tonight: [
-      "Kamu sedang tidur. Kalau Bromli membangunkanmu, semua kena disadvantage, jadi bersiaplah bertarung dalam kondisi buruk.",
-      "Begitu bangun, Divine Sense dulu untuk mengecek 'Ireena' dan 'Ismark' di ruangan.",
-      "Berdiri di sebelah Ireena yang asli. Sentinel melindunginya."
+      "Kamu di gereja bersama Cha Garr dan Ireena. Dengarkan permintaan Father Donavich sampai selesai, lalu tanya imbalan dan risikonya.",
+      "Sisa sumber dayamu: 3 slot mantra, 3 dari 4 Divine Sense, 15 Lay on Hands, 1 Channel Divinity. Simpan Turn the Faithless untuk Seriach, Sykane, atau Zantras kalau mereka muncul.",
+      "Kamu selalu merasa diawasi. Perankan pelan-pelan, dan beri tahu DM kalau perasaan itu tiba-tiba menguat.",
+      "Bicara dengan Ireena soal Vallaki. Persuasion +5, tapi dengarkan dulu kenapa ia tidak ingin pergi.",
+      "Doakan makam Kolyan bersama Cha Garr. Divine Sense bisa memeriksa apakah tanah makamnya suci."
     ],
     careful: [
       "Concentration Save cuma +1. Bless mudah buyar saat kamu terkena serangan.",
@@ -37,7 +39,7 @@ window.GUIDES = {
   },
 
   bromli: {
-    asOf: 5,
+    asOf: 6,
     stats: "AC 12 · HP 26 · Init +0 · Speed 25 · Str +3",
     turn: [
       "Bonus action: Rage. Kerusakan +2, tahan separuh kerusakan senjata, keuntungan pada cek dan save Strength.",
@@ -60,10 +62,10 @@ window.GUIDES = {
       "Julukanmu 'Never Knock'. DM jelas sedang menunggu kamu di depan pintu itu."
     ],
     tonight: [
-      "Seseorang baru menepuk pundakmu. Berbalik dan lihat dulu siapa itu sebelum menyerang.",
-      "Membangunkan yang lain membuat semua kena disadvantage. Coba tangani sendiri dulu.",
-      "Kamar Ireena dan Ismark terkunci. Tanyakan pada mereka yang di bawah: bagaimana kalian bisa keluar?",
-      "Jangan buka pintunya."
+      "Malam panjang sudah lewat, dan semalam dihitung istirahat panjang. Rage kembali penuh: 3 kali.",
+      "Ceritakan ke yang lain semua yang terjadi saat giliran jagamu, supaya semua tahu.",
+      "Di perjalanan ke Vallaki kamu di barisan depan. Darkvision-mu penting saat bermalam di jalan.",
+      "Bawa daging atau ransum ekstra untuk gagak. Kamu punya 10 ransum."
     ],
     careful: [
       "AC cuma 12. Reckless Attack membuatmu sangat mudah dipukul.",
@@ -73,7 +75,7 @@ window.GUIDES = {
   },
 
   "dan-garr": {
-    asOf: 5,
+    asOf: 6,
     stats: "AC 13 · HP 21 · Init +3 · Speed 40 · Ki 3",
     turn: [
       "Action: Attack dengan pukulan (+5, 1d4+3). Lalu bonus action untuk satu pukulan lagi, gratis.",
@@ -96,8 +98,10 @@ window.GUIDES = {
       "Kamu yang mendengar sesuatu menabrak jendela di sesi 4. Ceritakan ke yang lain."
     ],
     tonight: [
-      "Kamu sedang tidur. Kalau dibangunkan, semua kena disadvantage.",
-      "Kalau bertarung, kamu yang paling cepat untuk naik mengecek kamar Ireena dan Ismark."
+      "Kamu yang tahu tentang Seriach, Sykane, dan Zantras. Ceritakan mana yang menginginkan jiwa, mana yang menginginkan kepala, dan siapa sang kingmaker.",
+      "Beli bolt di toko Bildrath sebelum berangkat. Light crossbow-mu belum punya bolt.",
+      "Di jalan ke Vallaki kamu yang mengintai di depan, bersama gagak. Kecepatanmu 40 ft.",
+      "Jangan berjaga malam sendirian. Passive Perception-mu cuma 9."
     ],
     careful: [
       "Passive Perception cuma 9. Jangan jaga malam sendirian.",
@@ -108,8 +112,8 @@ window.GUIDES = {
   },
 
   jayn: {
-    asOf: 5,
-    stats: "AC 16 · HP 11 dari 24 · Init +5 · Speed 25 · Sneak Attack 2d6",
+    asOf: 6,
+    stats: "AC 16 · HP 24 · Init +5 · Speed 25 · Sneak Attack 2d6",
     turn: [
       "Cari advantage atau pastikan ada teman di sebelah musuh, lalu tusuk atau lempar belati (+7, 1d4+5) untuk Sneak Attack +2d6.",
       "Kalau belum bergerak: Steady Aim (bonus action) untuk advantage.",
@@ -131,19 +135,21 @@ window.GUIDES = {
       "Kamu membawa thieves' tools dan disguise kit. Pakai Fast Hands untuk membuka kunci sebagai bonus action."
     ],
     tonight: [
-      "HP-mu tinggal 11. Minta disembuhkan sebelum ada pertarungan: Healing Word dari Cha Garr atau Lay on Hands dari Duff.",
-      "Kamu sedang tidur. Kalau dibangunkan, semua kena disadvantage."
+      "HP-mu sudah penuh lagi (24) setelah istirahat panjang.",
+      "Sebelum berangkat, beli bedroll, waterskin, dan ransum. Kamu tidak punya satu pun.",
+      "Kamu yang membobol meja Kolyan. Pastikan semua tahu apa saja yang ada di sana, termasuk siapa yang menyimpan surat jalan.",
+      "Cek berapa air suci yang masih kamu bawa dari gereja."
     ],
     careful: [
-      "HP 11 dari 24. Tetap di jarak jauh dan jangan jadi sasaran pertama, seperti waktu melawan serigala.",
+      "HP-mu paling sedikit di party. Tetap di jarak jauh dan jangan jadi sasaran pertama, seperti waktu melawan serigala.",
       "Tidak punya darkvision. Butuh cahaya.",
       "Strength -1. Jangan bergulat atau mendorong."
     ]
   },
 
   "cha-garr": {
-    asOf: 5,
-    stats: "AC 18 · HP 17 dari 24 · Init +0 · Speed 20 · DC mantra 14",
+    asOf: 6,
+    stats: "AC 18 · HP 24 · Init +0 · Speed 20 · DC mantra 14",
     turn: [
       "Ronde pertama: Spiritual Weapon (bonus action, tanpa concentration), lalu Sacred Flame (action).",
       "Ronde berikutnya: gerakkan Spiritual Weapon untuk menyerang lagi (bonus action), lalu Sacred Flame.",
@@ -165,9 +171,10 @@ window.GUIDES = {
       "Kamu bisa bahasa Infernal. Simpan informasi ini."
     ],
     tonight: [
-      "Anak di balik jendela hanya bicara padamu. Jangan keluar rumah sendirian.",
-      "HP-mu 17 dari 24. Jayn lebih parah, sembuhkan dia dulu kalau ada waktu.",
-      "Kamu sedang tidur. Kalau dibangunkan, semua kena disadvantage."
+      "Kamu di gereja bersama Duff dan Ireena. Dengarkan permintaan Father Donavich, dan tanyakan apa yang membuatnya tidak bisa tidur.",
+      "Sosok besar di cermin muncul di belakangmu. Jangan sendirian di dekat cermin, dan jangan keluar sendirian.",
+      "Speak with Animals sebagai ritual (10 menit, tanpa slot) untuk bicara dengan gagak: apa yang ia lihat malam itu?",
+      "HP-mu sudah penuh lagi (24) setelah istirahat panjang. Slot mantra juga penuh: 4 level 1, 2 level 2."
     ],
     careful: [
       "Shillelagh hanya bekerja dengan club atau quarterstaff, bukan warhammer.",

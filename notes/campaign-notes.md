@@ -127,3 +127,6 @@ While they searched the shelves, the child floated up outside the glass. It didn
 At the end of the watch, the candles along the upstairs hall began to flicker one by one, as if someone were walking past them. The party went to sleep.
 
 Bromli took the third watch alone. Ireena came down the stairs and talked to him. Then Ismark did. Both of them asked for the same thing: "Open the door."
+
+### Session 6 (22/10/2026), no journal entry yet; see [session6-log.md](session6-log.md)
+Ireena tapped Bromli; long rest; mirror figure; Divine Sense found Seriach (hellhound), Sykane (behind the mirror), Zantras; Duff always feels watched; Danica in Vallaki (14 h on foot); taking Ireena, who doesn't want to go; the crow is a companion; Mary's missing child; Kolyan buried by Father Donavich with no spell; Donavich hasn't slept for 2 weeks and wants to ask something. Session ended there.
