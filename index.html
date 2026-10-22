@@ -219,7 +219,7 @@
 
   // NPCs
   $("npcs").replaceChildren(...c.npcs.map((n) =>
-    el("article", { class: "person" + (n.status === "dead" ? " dead" : "") }, [
+    el("article", { class: "person" + (n.status === "dead" ? " dead" : "") + (n.token ? " token" : "") }, [
       el("figure", {}, [n.img
         ? el("img", { src: n.img, alt: `Potret ${n.name}`, loading: "lazy" })
         : el("div", { class: "noimg", "aria-hidden": "true", text: n.name.charAt(0) })]),

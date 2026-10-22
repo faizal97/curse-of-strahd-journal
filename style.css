@@ -207,3 +207,7 @@
     border-radius: 50% 50% 0 0 / 28% 28% 0 0; background: var(--vellum); border: 1px solid var(--rule);
     font: 400 4rem/1 var(--display); color: var(--rule);
   }
+
+  /* Small round VTT tokens: show at natural size instead of stretching into the arch */
+  .person.token figure { aspect-ratio: 2 / 1; display: grid; place-items: center; background: var(--vellum); border: 1px solid var(--rule); border-radius: 50% 50% 0 0 / 50% 50% 0 0; }
+  .person.token img { width: auto; max-width: 9rem; aspect-ratio: auto; border-radius: 50%; background: none; }

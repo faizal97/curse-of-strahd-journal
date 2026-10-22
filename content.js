@@ -229,7 +229,7 @@ Duff, Cha Garr, dan Ireena pergi ke gereja di atas bukit. Father Donavich memaka
       text: "Adik Ismark. Ia menyaksikan ayahnya mati dan tetap berdiri tegak. Lebih suka pedangnya sendiri, yang ia pakai sejak kecil. Akan kita antar ke Vallaki, walau dalam hatinya ia tidak ingin pergi." },
     { name: "Ismark Kolyanovich", role: "Putra Kolyan, kini kepala keluarga", img: "img/ismark.webp",
       text: "Melucu untuk menutupi rasa takutnya. Bukan petarung terbaik, tapi rela melakukan apa saja demi Ireena. Biasa memakai pedang keluarga Indirovich. Menyuruh kita menemui Danica di Vallaki, dan ingin memeriksa keadaan desa." },
-    { name: "Father Donavich", role: "Pendeta gereja di atas bukit",
+    { name: "Father Donavich", role: "Pendeta gereja di atas bukit", img: "img/donavich.png", token: true,
       text: "Memakamkan Kolyan tanpa merapal mantra apa pun. Sangat kelelahan, mengaku sudah dua minggu tidak tidur. Hendak meminta sesuatu dari kita setelah pemakaman. (Ejaan nama belum pasti.)" },
     { name: "Danica", role: "Di Vallaki, belum kita temui",
       text: "Ismark menyuruh kita menemuinya di Vallaki. Belum diketahui siapa dia, dan apakah dia salah satu dari dua pendeta kuat yang disebut." },
