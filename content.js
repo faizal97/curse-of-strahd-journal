@@ -6,7 +6,7 @@ window.CAMPAIGN = {
 
   leftOff: {
     session: 5,
-    text: "Giliran jaga ketiga. Bromli duduk sendirian di dekat pintu rumah Burgomaster sementara yang lain tidur. Ireena turun dari tangga dan bicara padanya. Lalu Ismark juga. Keduanya meminta hal yang sama.",
+    text: "Giliran jaga ketiga. Bromli duduk sendirian di dekat pintu rumah Burgomaster sementara yang lain tidur. Ireena turun dari tangga dan bicara padanya. Lalu Ismark juga. Keduanya meminta hal yang sama. Bromli menyalakan perapian, lalu seseorang menepuk pundaknya.",
     quote: "Buka pintunya."
   },
 
@@ -20,6 +20,7 @@ window.CAMPAIGN = {
     {
       when: "Malam ini, di depan pintu",
       steps: [
+        "Bromli: seseorang baru saja menepuk pundakmu. Berbalik dengan hati-hati dan lihat dulu siapa itu sebelum menyerang. Bisa jadi teman, bisa jadi bukan.",
         "Jangan buka pintunya dulu. Bangunkan semua orang.",
         "Cek ke atas: apakah Ireena dan Ismark yang asli masih di kamarnya?",
         "Uji mereka. Ismark yang asli suka melucu untuk menutupi rasa takut. Ireena yang asli melindungi orang yang ia sayangi, bukan membahayakan mereka.",
@@ -29,6 +30,7 @@ window.CAMPAIGN = {
     {
       when: "Begitu pagi tiba",
       steps: [
+        "Tepati janji: beri daging kepada gagak berbulu biru. Siapkan dagingnya sebelum keluar rumah.",
         "Baca surat jalan dari meja Kolyan bersama-sama. Nama siapa saja yang tertulis, dan ke mana tujuannya?",
         "Tanya Ismark di mana pedang keluarga Indirovich, dan ke mana jasad Kolyan dibawa.",
         "Tanya Ireena sendiri apa yang ia mau. Dia ikut berjuang, bukan barang bawaan.",
@@ -48,6 +50,8 @@ window.CAMPAIGN = {
 
   // Things the table tends to forget.
   reminders: [
+    "Kita berjanji pada seekor gagak untuk memberi daging kepada gagak berbulu biru pagi ini. Di negeri seperti ini, janji kecil bisa berarti besar.",
+    "Ada sesuatu yang menabrak jendela di sesi 4 lalu menghilang. Belum ada yang menyelidikinya.",
     "Serigala di sini tidak gentar pada api. Jangan mengandalkan obor untuk mengusir mereka.",
     "Pemanah tanpa daging di jarinya masih berkeliaran di sekitar hutan.",
     "Mayat hidup yang membunuh Kolyan tidak dihancurkan. Mereka kembali ke hutan.",
@@ -59,6 +63,9 @@ window.CAMPAIGN = {
   ],
 
   threads: [
+    "Siapa yang menepuk pundak Bromli di depan perapian?",
+    "Apa yang menabrak jendela di sesi 4, dan ke mana perginya?",
+    "Siapa gagak berbulu biru itu, dan kenapa ia minta daging dari kita?",
     "Apa isi surat jalan dari meja Kolyan, dan nama siapa yang dikenali salah satu dari kita?",
     "Siapa anak di balik jendela, dan kenapa ia hanya memanggil Ca Gar untuk mencari papanya?",
     "Apa yang berjalan melewati lilin-lilin di lorong atas?",
@@ -132,8 +139,12 @@ Ditengah kisah canda tawa yang diberikan vistani terdapat ismark yang sedang ber
 Semakin malam, semakin larut, party memutuskan untuk bergegas tidur dirumah Burgomaster, sembari berharap Kolyan tidak bangkit kembali`
     },
     {
-      n: 4, date: "", title: "Sesi yang sunyi", lang: "id", quiet: true,
-      text: "Tak ada yang dianggap layak ditulis oleh jurnal."
+      n: 4, date: "", title: "Burung di jendela", lang: "id", fromTable: true,
+      text: `Jurnal tidak mencatat sesi ini. Ini yang diingat meja kita.
+
+Kita bertemu seekor gagak. Ia meminta kita memberikan daging keesokan paginya kepada gagak berbulu biru.
+
+Malamnya, Dan Gar mendengar sesuatu menabrak jendela, sepertinya burung. Saat dicek, tidak ada apa-apa. Dan Gar langsung tidur tanpa menyelidikinya.`
     },
     {
       n: 5, date: "17 Okt 2026", title: "Tengah Malam yang Panjang", lang: "id",
