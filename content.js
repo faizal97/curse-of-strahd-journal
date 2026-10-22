@@ -36,7 +36,7 @@ window.CAMPAIGN = {
         "Baca surat jalan dari meja Kolyan bersama-sama. Nama siapa saja yang tertulis, dan ke mana tujuannya?",
         "Tanya Ismark di mana pedang keluarga Indirovich, dan ke mana jasad Kolyan dibawa.",
         "Tanya Ireena sendiri apa yang ia mau. Dia ikut berjuang, bukan barang bawaan.",
-        "Ca Gar sebaiknya tidak keluar sendirian sampai kita tahu kenapa anak itu memanggilnya."
+        "Cha Garr sebaiknya tidak keluar sendirian sampai kita tahu kenapa anak itu memanggilnya."
       ]
     },
     {
@@ -50,8 +50,21 @@ window.CAMPAIGN = {
     }
   ],
 
+  // Who to lean on for what, from everyone's character sheet.
+  teamwork: [
+    { need: "Melawan mayat hidup", who: "Cha Garr memakai Turn Undead dan Sacred Flame. Duff memakai Divine Smite, 3d8 radiant melawan mayat hidup." },
+    { need: "Ada yang tumbang", who: "Cha Garr memakai Healing Word dari jarak 60 ft sebagai bonus action. Duff memakai Lay on Hands, 15 HP per istirahat panjang." },
+    { need: "Menjaga Ireena", who: "Duff berdiri di sebelahnya (AC 18, Sentinel). Cha Garr bisa menutup jalan dengan Spike Growth." },
+    { need: "Diserang panah dari jauh", who: "Dan Garr bisa menangkis panah dengan Deflect Missiles dan paling cepat mengejar pemanah." },
+    { need: "Pintu terkunci atau jebakan", who: "Jayn. Thieves' tools dan Sleight of Hand +7." },
+    { need: "Bicara dengan gagak atau hewan lain", who: "Cha Garr dan Duff sama-sama punya Speak with Animals. Pakai saat menemui gagak berbulu biru." },
+    { need: "Bertarung dalam gelap", who: "Bromli, Cha Garr, dan Dan Garr punya darkvision. Jayn dan Duff butuh obor." },
+    { need: "Belanja di toko Bildrath", who: "Gabungan emas kita sekitar 410 gp menurut sheet: Bromli 130, Duff 110, Dan Garr 100, Jayn 60, Cha Garr 10." }
+  ],
+
   // Things the table tends to forget.
   reminders: [
+    "Menurut sheet terakhir, Jayn tinggal 11 dari 24 HP dan Cha Garr 17 dari 24. Sembuhkan sebelum ada pertarungan.",
     "Kita berjanji pada seekor gagak untuk memberi daging kepada gagak berbulu biru pagi ini. Di negeri seperti ini, janji kecil bisa berarti besar.",
     "Ada sesuatu yang menabrak jendela di sesi 4 lalu menghilang. Belum ada yang menyelidikinya.",
     "Serigala di sini tidak gentar pada api. Jangan mengandalkan obor untuk mengusir mereka.",
@@ -69,7 +82,7 @@ window.CAMPAIGN = {
     "Apa yang menabrak jendela di sesi 4, dan ke mana perginya?",
     "Siapa gagak berbulu biru itu, dan kenapa ia minta daging dari kita?",
     "Apa isi surat jalan dari meja Kolyan, dan nama siapa yang dikenali salah satu dari kita?",
-    "Siapa anak di balik jendela, dan kenapa ia hanya memanggil Ca Gar untuk mencari papanya?",
+    "Siapa anak di balik jendela, dan kenapa ia hanya memanggil Cha Garr untuk mencari papanya?",
     "Apa yang berjalan melewati lilin-lilin di lorong atas?",
     "Apakah yang di depan pintu itu benar-benar Ireena dan Ismark?",
     "Kenapa mayat hidup itu hanya mengincar Kolyan, lalu kembali ke hutan?",
@@ -80,10 +93,21 @@ window.CAMPAIGN = {
   ],
 
   party: [
-    { name: "Ca Gar", note: "Ikut menggeledah ruang kerja Kolyan. Anak di balik jendela hanya bicara padanya." },
-    { name: "Jayn", note: "Berlari sendirian ke gereja mencari air suci saat desa jatuh. Membobol kunci meja Kolyan." },
-    { name: "Bromli", note: "Berjaga sendirian di giliran ketiga. Dialah yang mendengar permintaan di depan pintu." },
-    { name: "Duff Tareezy", note: "Paladin Sumpah Para Leluhur dari Evergreen Dawn. Bergabung di malam panjang itu." }
+    { name: "Bromli \"Never Knock\" Beerhammer", cls: "Dwarf Gunung · Barbarian 3 (Path of the Beast)",
+      note: "Si pemabuk yang datang lewat gerbang. Dari keluarga penambang Gold and Hammer Company. Berjaga sendirian di giliran ketiga dan yang mendengar permintaan di depan pintu.",
+      role: "Pemukul utama. Rage dan greataxe. Bisa melihat dalam gelap." },
+    { name: "Cha Garr", cls: "Half-Elf · Cleric 3 (Nature Domain)",
+      note: "Si ulama yang merasakan sihir tua di batu-batu Barovia. Anak di balik jendela hanya bicara padanya.",
+      role: "Penyembuh dan pengusir mayat hidup. Turn Undead, Healing Word, Spike Growth, bisa bicara dengan hewan." },
+    { name: "Dan Garr", cls: "Half-Elf · Monk 3 (Way of the Open Hand)",
+      note: "Si biarawan yang seolah sudah berdamai dengan kematian. Mendengar sesuatu menabrak jendela di sesi 4, lalu tidur.",
+      role: "Paling cepat (40 ft). Deflect Missiles untuk menangkis panah. Bisa melihat dalam gelap." },
+    { name: "Jayn Azza", cls: "Halfling · Rogue 3 (Thief)",
+      note: "Si pencuri yang tak percaya siapa pun. Berlari sendirian ke gereja mencari air suci. Membobol kunci meja Kolyan.",
+      role: "Kunci, jebakan, menyelinap. Sneak Attack. Butuh cahaya, tidak punya darkvision." },
+    { name: "Duff Tareezy", cls: "Human · Paladin 3 (Oath of the Ancients)",
+      note: "Paladin Evergreen Dawn. Bergabung di malam panjang itu dan melihat anak di balik jendela.",
+      role: "Pelindung Ireena. AC 18, Sentinel, Divine Smite, Lay on Hands, bisa bicara dengan hewan." }
   ],
 
   sessions: [
@@ -146,7 +170,7 @@ Semakin malam, semakin larut, party memutuskan untuk bergegas tidur dirumah Burg
 
 Kita bertemu seekor gagak. Ia meminta kita memberikan daging keesokan paginya kepada gagak berbulu biru.
 
-Malamnya, Dan Gar mendengar sesuatu menabrak jendela, sepertinya burung. Saat dicek, tidak ada apa-apa. Dan Gar langsung tidur tanpa menyelidikinya.`
+Malamnya, Dan Garr mendengar sesuatu menabrak jendela, sepertinya burung. Saat dicek, tidak ada apa-apa. Dan Garr langsung tidur tanpa menyelidikinya.`
     },
     {
       n: 5, date: "17 Okt 2026", title: "Tengah Malam yang Panjang", lang: "id",
