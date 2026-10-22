@@ -3,7 +3,7 @@ window.CAMPAIGN = {
   title: "Curse of Strahd",
   table: "Meja kita di Roll20",
   // ISO date-time of the next game, or null when it isn't set yet.
-  nextSession: "2026-10-29T21:00:00+07:00",
+  nextSession: "2026-11-05T21:00:00+07:00",
 
   // Which session each part was last checked against. Run `node check.mjs` after every update:
   // anything older than the latest session in `sessions` is reported as outdated.
