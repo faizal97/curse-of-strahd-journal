@@ -23,7 +23,8 @@ window.CAMPAIGN = {
         "Bromli: seseorang baru saja menepuk pundakmu. Berbalik dengan hati-hati dan lihat dulu siapa itu sebelum menyerang. Bisa jadi teman, bisa jadi bukan.",
         "Jangan buka pintunya dulu.",
         "Membangunkan yang lain membuat semua kena disadvantage. Bangunkan hanya kalau benar-benar terjadi pertarungan.",
-        "Cek ke atas sendiri: apakah Ireena dan Ismark yang asli masih di kamarnya?",
+        "Kamar Ireena dan Ismark di atas terkunci. Kalau mereka terkunci di dalam, bagaimana mereka bisa turun dan bicara pada Bromli?",
+        "Ketuk pintu kamar dan panggil nama mereka. Kalau yang asli menjawab dari dalam, yang di bawah itu palsu. Tanya DM dulu apakah ini dihitung membangunkan orang.",
         "Uji mereka. Ismark yang asli suka melucu untuk menutupi rasa takut. Ireena yang asli melindungi orang yang ia sayangi, bukan membahayakan mereka.",
         "Kalau Duff terpaksa dibangunkan, ia bisa memakai Divine Sense untuk merasakan mayat hidup atau iblis di dalam ruangan. Pintu yang tertutup menghalanginya."
       ]
