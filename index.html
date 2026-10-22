@@ -159,6 +159,13 @@
   .party h3 { font: 400 1.5rem/1.2 var(--display); margin: 0 0 .3rem; }
   .party p { margin: 0 0 .5rem; color: var(--ink-soft); }
   .party .cls { color: var(--moss); font-weight: 500; }
+  .party img {
+    width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%;
+    border-radius: 50% 50% 0 0 / 28% 28% 0 0; display: block; margin-bottom: 1rem;
+    background: var(--vellum);
+  }
+  .party > div { border-top: 0; padding-top: 0; }
+  .party h3 { padding-top: .75rem; border-top: 2px solid var(--moss); }
   .party .role { color: var(--ink); margin: 0; }
 
   /* People of Barovia */
@@ -346,6 +353,7 @@
   // Party
   $("party-list").replaceChildren(...c.party.map((p) =>
     el("div", {}, [
+      p.img ? el("img", { src: p.img, alt: `Potret ${p.name}`, loading: "lazy" }) : "",
       el("h3", { text: p.name }),
       el("p", { class: "cls", text: p.cls }),
       el("p", { text: p.note }),
