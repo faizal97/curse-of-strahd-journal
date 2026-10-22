@@ -15,6 +15,49 @@ window.CAMPAIGN = {
     from: "Permintaan terakhir Kolyan Indirovich, disampaikan oleh Ismark"
   },
 
+  // What the table could do next, grouped by when. Only uses what we've seen at the table.
+  nextSteps: [
+    {
+      when: "Malam ini, di depan pintu",
+      steps: [
+        "Jangan buka pintunya dulu. Bangunkan semua orang.",
+        "Cek ke atas: apakah Ireena dan Ismark yang asli masih di kamarnya?",
+        "Uji mereka. Ismark yang asli suka melucu untuk menutupi rasa takut. Ireena yang asli melindungi orang yang ia sayangi, bukan membahayakan mereka.",
+        "Duff bisa memakai Divine Sense untuk merasakan mayat hidup atau iblis di dalam ruangan. Pintu yang tertutup menghalanginya."
+      ]
+    },
+    {
+      when: "Begitu pagi tiba",
+      steps: [
+        "Baca surat jalan dari meja Kolyan bersama-sama. Nama siapa saja yang tertulis, dan ke mana tujuannya?",
+        "Tanya Ismark di mana pedang keluarga Indirovich, dan ke mana jasad Kolyan dibawa.",
+        "Tanya Ireena sendiri apa yang ia mau. Dia ikut berjuang, bukan barang bawaan.",
+        "Ca Gar sebaiknya tidak keluar sendirian sampai kita tahu kenapa anak itu memanggilnya."
+      ]
+    },
+    {
+      when: "Sebelum meninggalkan desa",
+      steps: [
+        "Belanja di toko Bildrath: air suci, minyak, obor, perban, ransum. Jangan terlihat putus asa, harganya bisa naik.",
+        "Tanya Bildrath atau Parriwimple barang apa saja yang mereka pungut dari medan perang.",
+        "Mampir ke gereja tempat Jayn mengambil air suci. Siapa yang menjaganya sekarang?",
+        "Tanya para Vistani kenapa mereka membenci Ismark, tapi jangan ceritakan rencana kita."
+      ]
+    }
+  ],
+
+  // Things the table tends to forget.
+  reminders: [
+    "Serigala di sini tidak gentar pada api. Jangan mengandalkan obor untuk mengusir mereka.",
+    "Pemanah tanpa daging di jarinya masih berkeliaran di sekitar hutan.",
+    "Mayat hidup yang membunuh Kolyan tidak dihancurkan. Mereka kembali ke hutan.",
+    "Gerbang hanya terbuka bagi yang sudah diklaim kabut. Jalan pulang mungkin tidak ada.",
+    "Lilin di lorong atas berkedip seolah ada yang lewat. Sesuatu mungkin sudah ada di dalam rumah.",
+    "Malam ini belum selesai, jadi istirahat panjang belum terhitung. Cek sisa HP dan slot mantra sebelum mulai.",
+    "Jayn mengambil air suci dari gereja. Pastikan kita tahu masih ada berapa.",
+    "Misi kita dari Kolyan: bawa Ireena ke tempat yang lebih aman. Semua keputusan sebaiknya diukur dari situ."
+  ],
+
   threads: [
     "Apa isi surat jalan dari meja Kolyan, dan nama siapa yang dikenali salah satu dari kita?",
     "Siapa anak di balik jendela, dan kenapa ia hanya memanggil Ca Gar untuk mencari papanya?",

@@ -93,6 +93,20 @@
   h2 { font: 400 clamp(2rem, 5vw, 3rem)/1.05 var(--display); margin: 0 0 .5rem; }
   .lede { color: var(--ink-soft); margin: 0 0 2rem; max-width: 40rem; }
 
+  /* Next steps: three stages in time order, then reminders */
+  .guide { background: var(--vellum); border-block: 1px solid var(--rule); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 2rem 2.5rem; counter-reset: stage; }
+  .stage { counter-increment: stage; }
+  .stage h3 { font: 400 1.5rem/1.2 var(--display); margin: 0 0 .75rem; display: flex; gap: .6rem; align-items: baseline; }
+  .stage h3::before { content: counter(stage); color: var(--candle); font-size: 2.2rem; line-height: 1; }
+  .stage:first-child h3 { color: var(--wine); }
+  .stage ul { margin: 0; padding: 0; list-style: none; }
+  .stage li { padding: .55rem 0; border-top: 1px solid var(--rule); }
+  .remind { margin-top: 3.5rem; max-width: 46rem; }
+  .remind ul { margin: 0; padding: 0; list-style: none; }
+  .remind li { padding: .6rem 0 .6rem 1.6rem; border-bottom: 1px solid var(--rule); position: relative; }
+  .remind li::before { content: "!"; position: absolute; left: .25rem; top: .45rem; font: 400 1.3rem/1 var(--display); color: var(--wine); }
+
   /* Quest + threads */
   .quest {
     background: var(--vellum); border-left: 4px solid var(--wine);
@@ -168,6 +182,7 @@
     <div class="wrap">
       <strong>Jurnal Tak Terlihat</strong>
       <nav aria-label="Sections">
+        <a href="#next-steps">Next</a>
         <a href="#quest">Quest</a>
         <a href="#journal">Journal</a>
         <a href="#party">Party</a>
@@ -183,6 +198,19 @@
         <h1 id="leftoff"></h1>
         <p class="who" id="leftoff-who"></p>
         <div class="next" id="next"></div>
+      </div>
+    </section>
+
+    <section id="next-steps" class="guide">
+      <div class="wrap">
+        <h2>Langkah selanjutnya</h2>
+        <p class="lede">Saran apa yang bisa kita lakukan, diurutkan dari yang paling mendesak. Hanya berdasarkan apa yang sudah kita lihat di meja.</p>
+        <div class="steps" id="steps"></div>
+
+        <div class="remind">
+          <h2>Jangan lupa</h2>
+          <ul id="reminders"></ul>
+        </div>
       </div>
     </section>
 
@@ -262,6 +290,14 @@
     );
   };
   tick(); setInterval(tick, 30e3);
+
+  // Next steps and reminders
+  $("steps").replaceChildren(...c.nextSteps.map((g) =>
+    el("div", { class: "stage" }, [
+      el("h3", { text: g.when }),
+      el("ul", {}, g.steps.map((s) => el("li", { text: s })))
+    ])));
+  $("reminders").replaceChildren(...c.reminders.map((r) => el("li", { text: r })));
 
   // Quest
   $("quest-name").textContent = c.quest.name;
